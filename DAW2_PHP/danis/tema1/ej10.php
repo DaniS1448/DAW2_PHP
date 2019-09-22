@@ -1,30 +1,32 @@
 <?php
 
     $array = [
-        'nombre'=>['uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'],
-        'romano'=>['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'vii', 'ix']
+        'nombre'=>['uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve', 'diez'],
+        'romano'=>['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'vii', 'ix', 'x']
     ];
     
-  /*   do {
-        $miN=0;
-        echo "N:";
-        fscanf(STDIN, "%s\n", $miN);
-    }
-    while ($miN > 0 && $miN < 11);
-    
+    $miN=0;
     $miFormato=0;
-    echo "Formato:";
-    fscanf(STDIN, "%s\n", $miFormato);
+    do {
+        echo "N:";
+        fscanf(STDIN, "%d\n", $miN);
+    }
+    while (!($miN > 0 && $miN < 11));
+    
+    do {
+        echo "Formato:";
+        fscanf(STDIN, "%s\n", $miFormato);
+    }
+    while (!array_key_exists($miFormato, $array));
     
     for ($i = 0; $i < $miN; $i++) {
         echo ($array[$miFormato][$i]), ', ';
-    } */
+    }
     
-    echo sizeof($array);
     echo "\n";
-    //echo array_keys($array);
-    echo 'res inarray nombre: ',in_array('uno', $array['nombre']);
-    echo "\n";
-   
+
+    foreach ($array[$miFormato] as $numeros){
+        echo $numeros, ', ';
+    }
 
 ?>
