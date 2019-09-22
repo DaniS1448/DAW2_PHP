@@ -22,7 +22,7 @@ foreach ($usuarios as $usuario){
         echo $estructura, $cadaUsuario, "\n";
         $estructura = estructuraUsuario($estructura);
     }
-    echo "============\n";
+    echo "============ \n";
 }
 
 ?>
