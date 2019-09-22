@@ -15,7 +15,7 @@ $colorFavorito = [
 ];
 
 echo "\n";
-echo array_keys($colorFavorito);
+//echo array_keys($colorFavorito); err
 
 $array = [
     'nombre'=>['uno', 'dos', 'tres', 'cuatro', 'cinco', 'seis', 'siete', 'ocho', 'nueve'],
@@ -28,5 +28,19 @@ echo "\n";
 echo 'res inarray nombre: ',in_array('uno', $array['nombre']);
 echo "\n";
 echo 'res inarray nombre: ',array_key_exists('nombre', $array);
+
+$cadena = "Alberto:Garay:913334455//Ana:Garcia:914445566";
+$cad1 = explode('//', $cadena);
+//$cad2 = explode('//', $cad1);
+$usuario=[];
+foreach ($cad1 as $newCad){
+    //$usuario = explode(':', $newCad);
+    array_push($usuario, explode(':', $newCad));
+}
+
+echo "\n";
+print_r($cad1);
+echo "\n";
+print_r($usuario);
 
 ?>
