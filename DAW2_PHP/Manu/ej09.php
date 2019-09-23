@@ -16,6 +16,7 @@ fscanf(STDIN,"%d\n",$n);
 echo "Formato: ";
 fscanf(STDIN,"%s\n",$formato);
 
+
 for ($i=0;($i<$n && $n<=10);$i++){
   echo  $formato=="nombre" ? "$nombre[$i], " : "";
   echo  $formato=="romano" ? "$romano[$i], " : "";
