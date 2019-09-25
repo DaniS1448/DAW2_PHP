@@ -4,8 +4,9 @@ saldrán los nombres de los números del 1..N (uno, dos, tres, cuatro, …), si se i
 en formato romano (i, ii, iii, iv, …) Diseñar el programa para que sólo tenga un bucle (y no tenga sentencias “if” ni “switch”), 
 de manera que se puedan añadir nuevos formatos de números en el futuro, sin cambiar casi el código.*/
 
-$nombre=["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"];
-$romano=["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+$arrayFormatos=[ "nombre"=>["uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve","diez"],
+                "romano"=>["I","II","III","IV","V","VI","VII","VIII","IX","X"]
+                ];
 
 echo "N del 1 al 10: ";
 fscanf(STDIN,"%d\n",$n);
@@ -18,7 +19,6 @@ fscanf(STDIN,"%s\n",$formato);
 
 
 for ($i=0;($i<$n && $n<=10);$i++){
-  echo  $formato=="nombre" ? "$nombre[$i], " : "";
-  echo  $formato=="romano" ? "$romano[$i], " : "";
+  echo  $arrayFormatos[$formato][$i].", ";
 }
 ?>
