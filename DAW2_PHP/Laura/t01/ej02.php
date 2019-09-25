@@ -25,7 +25,7 @@ for ($numero; $numero >0; $numero--) {
 */
 
 
-//----PROFE----//
+/* //----PROFE----//
 
 $n = 0;
 $c = '+';
@@ -45,7 +45,34 @@ for ($columna = $numero; $columna >= 1; $columna--) {
    }
    
    echo "\n";
+} */
+
+//---PROFE---//
+function sig($c) {
+    $sol = 'loquesea';
+   
+    switch ($c) {
+        case '+' : $sol = '-';break;
+        case '-' : $sol = '.';break;
+        case '.' : $sol = '+';break;
+    }
+    return $sol;    
 }
+
+$n = 0; 
+$c = '+';
+
+echo 'Introduce n: ';
+fscanf(STDIN,"%d\n", $n);
+
+for ($i = $n; $i >=1; $i--) {
+    for ($j = 1; $j <= $i; $j++) {
+        $c = sig($c); 
+        echo $c;
+    }
+    echo "\n";
+}
+
 
 
 ?>
