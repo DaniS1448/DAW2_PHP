@@ -4,7 +4,7 @@
 <!-- 	Ejemplo: -->
 <!-- Introduce línea de texto: HOLA -->
 <!-- Introduce n: 4 -->
-<!-- 	<h1>HOLA</h1> -->
+<!-- <h1>HOLA</h1> -->
 <!-- <h2>HOLA</h2> -->
 <!-- <h3>HOLA</h3> -->
 <!-- <h4>HOLA</h4> -->
@@ -12,22 +12,21 @@
 <!-- <h2>HOLA</h2> -->
 <!-- <h1>HOLA</h1> -->
 
-<?php 
-
-echo "introduce linea de texto: ";
+<?php
+echo "Introduce linea de texto: ";
 fscanf(STDIN, "%s\n", $texto);
-echo "\nintroduce n: ";
+echo "Introduce n: ";
 fscanf(STDIN, "%d\n", $n);
 
-for ($i = 0; $i < $n; $i++) {
-    
-    echo <h
-    
+// while ($n > 6 || $n > 1) {
+//     echo "Introduce un número entre 1 y 6";
+//     fscanf(STDIN, "%d\n", $n);
+// }
+for ($i = 1; $i <= $n; $i ++) {
+    echo "<h$i>$texto</h$i><br>\n";
 }
-
-
-
-
-
+for ($i=$n-1; $i >= 1; $i --) {
+    echo "<h$i>$texto</h$i><br>\n";
+}
 
 ?>
