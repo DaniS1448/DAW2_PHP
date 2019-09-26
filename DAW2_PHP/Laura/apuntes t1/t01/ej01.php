@@ -584,6 +584,30 @@ echo array_shift($a)."\n";
 print_r($a); */
 
 
+/* echo "INICIO\n";
+//ZONA PELIGROSA
+ini_set('display_errors', 0); //hay errores pero no se muestran
+//E_NOTICE
+echo $x;
+//E_WARNING
+include noexixte.php;
+ */
+
+/* //Hay 3 ficheros "otro.php", "dos.php", uno.php
+//--"otro.php"                              --"dos.php"
+echo "CERO";                                function f() {
+                                            echo "Haciendo f()";
+                                            }
+echo PHP_EOL;
+//INCLUDE: incuye 
+include 'uno.php';                          echo "PRIMERO";
+echo PHP_EOL;
+
+include 'dos.php';
+echo PHP_EOL;
+
+f(); */
+
 
 
  ?>
