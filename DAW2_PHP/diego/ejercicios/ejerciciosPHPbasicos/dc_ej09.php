@@ -1,3 +1,4 @@
+<?php
 // Preguntar por teclado un número n (del 1 al 10),
 // y a continuación qué formato se requiere, Si se indica “nombre”,
 // saldrán los nombres de los números del 1..N (uno, dos, tres, cuatro, …),
@@ -13,11 +14,42 @@
 // N: 5
 // Formato: nombre
 // uno, dos, tres, cuatro, cinco
-<?php
+$arrayFormato = [
+    "nombre" => [
+        "uno",
+        "dos",
+        "tres",
+        "cuatro",
+        "cinco",
+        "seis",
+        "siete",
+        "ocho",
+        "nueve",
+        "diez"
+    ],
+
+    "romano" => [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "IX",
+        "X"
+    ]
+];
+
 echo "N: ";
 fscanf(STDIN, "%d\n", $n);
-echo "Formato: ";
-fscanf(STDIN, "%s\n", $f);
+echo "Formato (romano, nombre): ";
+fscanf(STDIN, "%s\n", $f); // le doy a f el valor que luego utilizo en el bucle for
 
+for ($i = 0; $i < $n; $i ++) {
+    echo $arrayFormato[$f][$i], ","; // llamo al array, el valor, y el numero
+}
 
 ?>
+
