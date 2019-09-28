@@ -35,21 +35,19 @@ while ($n < 1 || $n > 10) {
     echo "\nN: ";
     fscanf(STDIN, "%d\n", $n);
 }
+
 echo "Formato (romano, nombre): ";
-fscanf(STDIN, "%s\n", $f); // le doy a f el valor que luego utilizo en el bucle for
+fscanf(STDIN, "%s\n", $formato); // le doy a f el valor que luego utilizo en el bucle for
 
-
-
-
-for ($i = 0; $i < $n; $i ++) {
-    echo $arrayFormato[$f][$i], ","; // llamo al array, el valor, y el numero
+// while (!array_key_exists($formato, $arrayFormato)){
+while (! (in_array($formato, array_keys($arrayFormato)))) { 
+    // si no se encuentra un array con esas caracteristicas
+    echo "Dime un formato válido (romano, nombre): ";
+    fscanf(STDIN, "%s\n", $formato);
 }
 
-
-
-
-
-
-
+for ($i = 0; $i < $n; $i ++) {
+    echo $arrayFormato[$formato][$i], ","; // llamo al array, el valor, y el numero
+}
 
 ?>
