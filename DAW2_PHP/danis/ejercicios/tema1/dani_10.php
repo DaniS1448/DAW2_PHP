@@ -25,8 +25,8 @@
     
     echo "\n";
 
-    foreach ($array[$miFormato] as $numeros){
+    /* foreach ($array[$miFormato] as $numeros){
         echo $numeros, ', ';
-    }
+    } */
 
 ?>

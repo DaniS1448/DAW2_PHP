@@ -12,7 +12,7 @@ do{
     
 } while ($n != 0);
 
-echo "Operación? ";
+echo "OperaciÃ³n? ";
 $operacion = "";
 fscanf(STDIN, "%s\n", $operacion);
 
@@ -22,11 +22,11 @@ switch ($operacion) {
     break;
     
     case "multiplicar":
-        echo "\nLa multiplicación vale $multi";
+        echo "\nLa multiplicaciÃ³n vale $multi";
         break;
     
     default:
-        echo "Error: la operación no es válida";
+        echo "Error: la operaciÃ³n no es vÃ¡lida";
     break;
 }
 ?>
