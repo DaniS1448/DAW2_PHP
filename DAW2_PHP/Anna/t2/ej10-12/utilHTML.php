@@ -29,5 +29,26 @@ HTML;
     $i++;}
 return $sol;
 }
+/*	P.ej. la llamada pintarCheckboxes(‘aficion’,[‘D’=>’Deporte’, ‘C’=>’Cine’]) 
+ * devolvería el siguiente código HTML.
+<input type="checkbox" name="aficion[]" value="D" id="D">
+<label for="D">Deporte</label><br />
+<input type="checkbox" name="aficion[]" value="C" id="C">
+<label for="C">Cine</label><br />
+*/
+function pintarCheckboxes($nombre, $arrayValueLabel){
+    $sol='';
+    $nombreArray=$nombre."[]";
+    $keys=array_keys($arrayValueLabel);
+
+    foreach ($keys as $value){
+        
+            $sol.=<<<HTML
+<input type="checkbox" name=$nombreArray value=$value id=$value>
+<label for=$value>$arrayValueLabel[$value]</label><br />
+HTML;
+        }
+        return $sol;
+}
 
 ?>
