@@ -51,4 +51,29 @@ HTML;
         return $sol;
 }
 
+function pintarCheckboxesSel($nombre, $arrayValueLabel,$seleccionados){
+    $sol='';
+    $nombreArray=$nombre."[]";
+    $keys=array_keys($arrayValueLabel);
+    $i=0;
+    foreach ($keys as $value){
+        
+        if(in_array($keys[$i],$seleccionados)){
+           
+        $sol.=<<<HTML
+<input type="checkbox" name=$nombreArray value=$value id=$value checked="checked" multiple="multiple">
+<label for=$value>$arrayValueLabel[$value]</label><br />
+HTML;
+        }
+        else {
+            $sol.=<<<HTML
+<input type="checkbox" name=$nombreArray value=$value id=$value multiple="multiple">
+<label for=$value>$arrayValueLabel[$value]</label><br />
+HTML;
+        }
+            $i++;
+    }
+    return $sol;
+}
+
 ?>
