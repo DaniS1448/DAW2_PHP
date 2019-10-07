@@ -30,6 +30,8 @@ do{
         case "3": menu3mostrarEmpleadoPorId($empleados, $departamentos); break;
         case "4": $empleados=menu4actualizarEmpleado($empleados); break;
         case "5": $empleados=menu5eliminarEmpleado($empleados); break;
+        
+        case "10": ; break;
         default: echo "Opción no válida\n"; break;
     }
 }while ($op != "10");
@@ -81,7 +83,7 @@ function menu3mostrarEmpleadoPorId($empleados, $departamentos){
         echo "Nombre: ".$empleados[$idEmp]["nombre"].PHP_EOL;
         echo "Apellido: ".$empleados[$idEmp]["apellido"].PHP_EOL;
         echo "ID Departamento: ".$empleados[$idEmp]["idDpt"].PHP_EOL;
-        echo "Nombre Departamento: ".$departamentos[$empleados[$idEmp]["idDpt"]]["nombre"].PHP_EOL;
+        //echo "Nombre Departamento: ".$departamentos[$empleados[$idEmp]["idDpt"]]["nombre"].PHP_EOL;
         echo PHP_EOL;
     } else {
         echo "No existe ningún empleado con el id ".$idEmp.PHP_EOL;

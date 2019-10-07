@@ -1,0 +1,2 @@
+nc -l 7777
+nc localhost 7777
