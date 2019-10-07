@@ -5,7 +5,7 @@
    <body>
       <h1>Formulario con múltiples campos</h1>
       
-      <form name="f1" action="mostrar.php" method="post">
+      <form name="f1" action="dani_t08_mostrar.php" method="post">
       <b>CAMPOS DE TEXTO:</b> <br /> Nombre: <input type="text" name="txtNombre" value="Pepe" /> <br /> 
          Contraseña: <input type="text" name="pswClave" /> <br /> Oculto <input type="hidden" name="hdnOculto" value="Mensaje oculto" /> <br /> 
          <hr />
@@ -39,7 +39,7 @@
          <hr />
          <b>ARCHIVO:</b> <br />   <input type="file" name="flArchivo" /> 
          <hr />
-         <b>BOTONES:</b> <br />   <input type="button" value="Mostrar un mensaje" onclick="alert('Un botón genérico');" />  <input type="submit" name="botonEnviar" value="Enviar formulario al servidor" /> <input type="image" name="imagen" src="flechaVerde.jpg" width="30" height="30" title="Equivalente a submit" /> 
+         <b>BOTONES:</b> <br />   <input type="button" value="Mostrar un mensaje" onclick="alert('Un botón genérico');" />  <input type="submit" name="botonEnviar" value="Enviar formulario al servidor" /> <input type="image" name="imagen" src="dani_t08_flechaVerde.jpg" width="30" height="30" title="Equivalente a submit" /> 
       </form>
       <input type="reset" value="Resetear el formulario" /> 
    </body>
