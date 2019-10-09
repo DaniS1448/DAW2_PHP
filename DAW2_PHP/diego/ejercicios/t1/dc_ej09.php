@@ -42,6 +42,8 @@ $arrayFormato = [
     ]
 ];
 
+$gh=readline();
+
 echo "N: ";
 fscanf(STDIN, "%d\n", $n);
 echo "Formato (romano, nombre): ";

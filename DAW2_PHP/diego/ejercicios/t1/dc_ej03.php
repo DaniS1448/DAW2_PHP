@@ -9,7 +9,6 @@ echo "Introduce n: \n";
 fscanf(STDIN, "%d\n", $n);
 echo "Introduce n: \n";
 fscanf(STDIN, "%d\n", $m);
-
 for ($i = 0; $i < $n; $i++) {
     for ($j = 0; $j < $m; $j++) {
         echo "$j ";
