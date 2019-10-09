@@ -15,3 +15,4 @@ Listado de cookies de <b>nivel 1</b> <?php echo pathinfo($_SERVER['REQUEST_URI']
 	?>
 	
 </table>
+<a href="../dani_t3_ej03.php">Volver</a>
