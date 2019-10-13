@@ -1,7 +1,7 @@
 <?php
 echo <<<HTML
-    <form action="ej17.php" method="get">
-    Escoge un fichero <input type="file" name="file"/>
+    <form enctype="multipart/form-data" action="ej17.php" method="post">
+    Escoge un fichero <input type="file" name="fich"/>
     <br>
     Escoge una carpeta destino
     <select name="carpeta"> 
