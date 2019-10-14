@@ -10,5 +10,7 @@ if ($nivel == 2) $ruta.='/uno/dos';
 
 setcookie($nombre, $contenido, 0, $ruta);
 
-echo 'La cookie se ha guardado correctamente en la ruta ' . $ruta;
+echo "La cookie nombre: $nombre; contenido: $contenido se ha guardado correctamente en la ruta " . $ruta;
 ?>
+
+<br/><a href="dani_t3_ej03.php">Volver</a>

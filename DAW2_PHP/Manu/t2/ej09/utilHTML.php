@@ -33,8 +33,9 @@ HTML;
 function pintarSelect($nombre,$arraySelect,$multiple=""){    
     $res="";
     $mult=$multiple=="multiple"?"multiple=\"multiple\"":"";
+    $nombreMult=$multiple=="multiple"?"[]":"";
     $res.=<<<HTML
-    <select name="$nombre" $mult>
+    <select name="{$nombre}$nombreMult" $mult>
 HTML;
     foreach ($arraySelect as $e => $a){
         $res.= <<<HTML
@@ -42,6 +43,7 @@ HTML;
 HTML;
        
     }
+    $res.="</select>";
         return $res;
     
     
