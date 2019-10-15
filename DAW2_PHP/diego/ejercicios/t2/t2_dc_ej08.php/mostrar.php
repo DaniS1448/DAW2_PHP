@@ -17,8 +17,10 @@ $imagenY = '';
 if (isset($_REQUEST['txtNombre'])) {
     $nombre = $_REQUEST['txtNombre'];
 } // se recibe la contraseña
-/* RELLENAR */
 
+if (isset($_REQUEST['pswClave'])) {
+    $clave = $_REQUEST['pswClave'];
+}
 // se recibe el campo oculto
 if (isset($_REQUEST['hdnOculto'])) {
     $oculto = $_REQUEST['hdnOculto'];
@@ -28,7 +30,9 @@ if (isset($_REQUEST['rdSemaforo'])) {
     $semaforo = $_REQUEST['rdSemaforo'];
 } // se recibe elcheckbox de publicidad
 
-/* RELLENAR */
+if (isset($_REQUEST['cbPublicidad'])) {
+    $publicidad = $_REQUEST['cbPublicidad'];
+} 
 
 // se recibe el checkbox múltiple de idiomas y se trata como un array
 
@@ -42,9 +46,16 @@ if (isset($_REQUEST['cbIdioma'])) {
     }
 }
 // se recibe el año de fin de estudios
-/* RELLENAR */
+if (isset($_REQUEST['selAnioFinEstudios'])) {
+    $anioFinEstudios = $_REQUEST['selAnioFinEstudios'];
+}
 // se recibe el select múltiple de ciudades (códigos postales), que se trata como un array
-/* RELLENAR */
+if (isset ( $_REQUEST ['selCodigosPostales'] )) {
+    $tamanioSelectCod = sizeof ( $_REQUEST ['selCodigosPostales'] );
+    for($i = 0; $i < $tamanioSelectCod; $i ++) { // se recorre el array de checkboxes
+        $codigosPostales .= $_REQUEST ['selCodigosPostales'] [$i] . ' ';
+    }
+}
 // se recibe el contenido del textarea
 if (! empty($_REQUEST['txaComentarios'])) {
     $comentarios = $_REQUEST['txaComentarios'];
@@ -55,8 +66,9 @@ if (! empty($_REQUEST['flArchivo'])) {
 if (isset($_REQUEST['imagen_x'])) {
     $imagenX = $_REQUEST['imagen_x'];
 } // se recibe la coordenada Y del punto
-
-/* RELLENAR */
+if (isset ( $_REQUEST ['imagen_y'] )) {
+    $imagenY = $_REQUEST ['imagen_y'];
+}
 ?>
 <html>
 <body>  Nombre: 
