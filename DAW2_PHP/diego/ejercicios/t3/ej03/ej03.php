@@ -25,4 +25,5 @@ principal;
 //el action nos lleva a cookies.php y alli recogemos con $_GET nombre y contenido
 //los input y select los recogemos con el name en cookies.php
 // la opcion seleccionada se recoge con value
+// el archivo de listar es igual en todas las carpetas, solo hay q cambiar la ruta de destino
 ?>
