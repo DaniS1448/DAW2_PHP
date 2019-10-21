@@ -4,7 +4,7 @@ function escribir() {
     $remitente= $_SESSION['usuario'];
     $url = $_SERVER['REQUEST_URI'];
     //$destinatario = explode('=', $url);
-   $destinatario =   $_GET['destinatario'];
+   $destinatario = $_GET['destinatario'];
    
     echo "Usuario conectado <b>{$_SESSION['usuario']}</b>";
     echo <<<formulario

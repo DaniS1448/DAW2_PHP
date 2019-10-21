@@ -11,7 +11,7 @@ function leerMensaje() {
     foreach ($_SESSION['usuarios'][$remitente[1]]['mensajes'][$_SESSION['usuario']] as $usu) {
         echo "<tr><td>$usu[2]</td><td>$usu[1]</td></tr>";}
         echo "</table>";
-        echo "<br/>Volveer a la <a href='listaUsuarios.php'>Lista de Usuarios</a>";
+        echo "<br/>Volver a la <a href='listaUsuarios.php'>Lista de Usuarios</a>";
 }
 leerMensaje();
 ?>

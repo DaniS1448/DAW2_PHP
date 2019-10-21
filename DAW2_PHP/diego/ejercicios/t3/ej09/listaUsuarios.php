@@ -1,48 +1,21 @@
 <?php
 session_start();
-
-
-function listarUsuarios() {
-    foreach ($_SESSION['usuarios'] as $user){
-        //echo " ".$user[0]." es ".$_SESSION['usuario']."\n";
-        if ($user[0] != $_SESSION['usuario'] && $user[0] != ""){
-            
-            echo "<table>
-                <tr>
-                <td>".$user[0]."</td>"
-              ."<td><a href='leer.php?remitente=".$user[0]."'>Leer</a></td>"
-              ."<td><a href='escribir.php?destinatario=".$user[0]."'>Escribir</a></td>"
-              ."</tr>"
-                ."</table>";
-        }
+// ingresa sesion con el nombre ingresado en el login
+echo "Usuario actual {$_SESSION['_activo']}";
+echo "<h2>Lista de usuarios / mensajes</h2><br/>";
+// me listas todos los usuarios
+foreach ($_SESSION['usuarios'] as $k => $v) {
+    // si no es el usuario activo
+    if ($k != $_SESSION['_activo']) {
+        // solo me muestra leer
+        echo "$k ";
+        echo "<a href='leer.php'>Leer</a> <br/>";
+    } // si el usuario es el activo
+    else { // me muestra Escribir y Leer
+        echo "$k ";
+        echo "<a href='leer.php'>Leer</a> ";
+        echo "<a href='escribir.php'>Escribir</a><br/> ";
     }
 }
-
-
-echo "Usuario actual <b>".$_SESSION['usuario']."</b>";
-echo "<h3>Lista de Usuarios/Mensajes</h3>";
-
-listarUsuarios();
-
-echo "<br/><a href='login.php'>Volver al Login</a>";
-
-
-// $usuario = $_SESSION["usuarios"];
-
-// if ($usuario == ''){
-//     echo "Hola desconocido.<br/>";
-//     echo "ID ".session_id()."<br/>";
-// } else {
-//     echo "Hola ".$usuario. " <br/>";
-// }
-
-
-
-
-
-// echo "Lista de usuarios:<br/>";
-// print_r($_SESSION['usuarios']);
-// para saber los usuarios guardados
-
-
-?> 
+echo "<br/><a href='login.php'>Volver a Login</a>";
+?>

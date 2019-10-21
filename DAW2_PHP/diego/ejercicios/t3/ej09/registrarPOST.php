@@ -1,35 +1,52 @@
 <?php
+
 session_start();
 
-function crearUsuario($u,$p) {
-    if (isset($_SESSION['usuarios'][$u])) {
-        echo 'El usuario ya exixte';
-        //Volvemos a la pagina registrar y luego a login
-        echo '<a href = "registrar.php"> Volver al Registro</a></br>';
+function crearUsuario($u, $p)
+{
+    $resul = false;
+    if ($u == "") {
+        $resul = false;
+    } else if ($p == "") {
+        $resul = false;
+    } else {
+        if (isset($_SESSION['usuarios'][$u])) {
+            $resul = false;
+        } else {
+            $_SESSION['usuarios'][$u] = [];
+
+            $_SESSION['usuarios'][$u] = [
+                'pwd' => $p
+            ];
+
+            echo "<pre>";
+            print_r($_SESSION['usuarios']);
+            echo "</pre>";
+            $resul = true;
+        }
     }
-    else {
-        //Creamos el usuario y lo metemos en ese array de ['usuarios']
-        $_SESSION['usuarios'][$u] = [];
-        
-        array_push($_SESSION['usuarios'][$u],$u,$p);
-        echo "Usuario ".$u." creado correctamente. Redirigiendo...<br/>";
-        header("refresh:3; url=login.php");
-        print_r($_SESSION);
-    }
-    
+    return $resul;
 }
-$usuario = $_POST['usuario'];
-$pwd = $_POST['pwd'];
+$usuario_nuevo = $_POST['nombre_nuevo'];
+$clave_nueva = $_POST['clave_nueva'];
+if (crearUsuario($usuario_nuevo, $clave_nueva)) {
+    echo "Usuario creado.<br><a href='login.php'>Volver al login</a>";
+} else {
+    echo "No se ha introducido usuario o contraseña o ya existe<br>
+            <a href='registrar.php'>Volver a la pantalla de registro</a>";
+}
 
-crearUsuario($usuario, $pwd);
-
+// $u=$_POST['usuario'];
 
 // if (! isset($_SESSION['usuarios'])) {
 
-//     $_SESSION['usuarios'] = [];
+// $_SESSION['usuarios'] = [];
 // }
 // //$_SESSION['usuarios'][] = [$_POST['usuario']];
 // $_SESSION['usuarios'][$_POST['usuario']]['pwd'] = $_POST['pwd'];
 
+// echo "Usuario ".$u." creado correctamente. Redirigiendo...<br/>";
+// header("refresh:3; url=login.php");
+// print_r($_SESSION['usuarios'])
 
 ?>
