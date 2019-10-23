@@ -1,4 +1,5 @@
 <?php
+session_start();
 $usuariosClave=["Manu"=>"manu123","Dani"=>"dani1","Diego"=>"delegado","Celia"=>"cel89"];
 
 $usuario= isset($_REQUEST["usuario"])? $_REQUEST["usuario"]:"";
@@ -18,12 +19,12 @@ function comprobarUsuario(){
 }
 
 function banderas($nombre,$banderas,$seleccionado=""){
-        
-    foreach($banderas as $e => $a){
-        $check= $seleccionado==$e?"checked=\"checked\"":"";
+    
+    foreach($banderas as $e => $a){ 
+    if (isset($_SESSION['bandera'])) {if($_SESSION['bandera'] == $e) {$seleccionado= "checked=\"checked\"";}}
     echo <<<HTML
-    <img src="$a" width="27" height="18" alt="$e" $check/>
-    <input type="radio" name="$nombre" value="$e" $check/>
+    <img src="$a" width="27" height="18" alt="$e"/>
+    <input type="radio" name="$nombre" value="$e" id="$e" $seleccionado/>
 HTML;
     }
 }
@@ -40,13 +41,17 @@ if (comprobarUsuario()){
         setcookie ("visitas",1);        
     }
     
+    if (!isset($_SESSION['bandera'])) {
+        $_SESSION['bandera']="espania";
+    }
+    
     echo "Conectado como <b>".$usuario."</b>. Numero de visitas ".$visitas.".<br>";
     echo <<<HTML
             <form action="index.php" method="post">
                 <input type="hidden" name="usuario" value="$usuario"/>
                 <input type="submit" value="Desconectar"/>           
 HTML;
-    banderas("paises",["espania"=>"img/es.png","inglaterra"=>"img/gb.png","francia"=>"img/fr.png"],isset($_REQUEST[]));
+    banderas("paises",["espania"=>"img/es.png","inglaterra"=>"img/gb.png","francia"=>"img/fr.png"]);
    echo "</form>";
     
 } else {

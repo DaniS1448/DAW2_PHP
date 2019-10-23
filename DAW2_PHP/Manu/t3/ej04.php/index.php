@@ -5,6 +5,10 @@ if (isset($_REQUEST["usuario"])){
 } else {
     echo "Primera ejecucion. Usted no esta conectado";
 }
+
+if (isset($_GET['radio'])) {
+    $_SESSION['bandera'] = $_GET['paises'];
+}
 ?>
 <form action="loginPost.php" method="post">
    Usuario: <input type="text" name="usuario" required="required"/><br>
