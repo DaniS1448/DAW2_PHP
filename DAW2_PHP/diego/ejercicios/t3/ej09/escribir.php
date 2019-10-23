@@ -1,29 +1,19 @@
 <?php
 session_start();
-function escribir() {
-    $remitente= $_SESSION['usuario'];
-    $url = $_SERVER['REQUEST_URI'];
-    //$destinatario = explode('=', $url);
-   $destinatario = $_GET['destinatario'];
-   
-    echo "Usuario conectado <b>{$_SESSION['usuario']}</b>";
-    echo <<<formulario
-   <form action="escribirPost.php" method="post"><br/>
-   
-   <label for="idRemitente">De: </label>
-   <input id="idRemitente" type="text" name="remitente" readonly="readonly" value="{$remitente}"><br/>
-   
-   <label for="idDestinatario">Para: </label>
-   <input id="idDestinatario" type="text" name="destinatario" readonly="readonly" value="{$destinatario}"><br/>
-   
-   <label for="idTextoMensaje">Escribe el contenido del mensaje</label><br/>
-   <textarea rows="10" cols="50" id="idTextoMensaje" type="text" name="mensaje"></textarea><br/>
-   
-   <input type="submit"/>
-   
-   </form>
-formulario;
-}
 
-escribir();
+$usuario=$_SESSION['_activo'];
+$destinatario=$_GET['destinatario'];
+
+//usamos el usuario y destinatario para despues recogerlos en escribirPOST
+
+echo <<<ESCRIBIR
+<h1>ESCRIBRIR</h1>
+<form action="escribirPOST.php" method="get">
+De: <input type="text" value="{$usuario}" name="remitente" readonly="readonly"><br/>
+Para: <input type="text" value="$destinatario" name="destinatario" readonly="readonly"><br/>
+Escribe el contenido del mensaje: <br/>
+<textarea cols="50" rows="10" name="mensaje" required="required"></textarea><br/>
+<input type="submit" value="Enviar">
+</form>
+ESCRIBIR;
 ?>
