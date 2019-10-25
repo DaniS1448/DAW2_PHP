@@ -1,16 +1,33 @@
+<?php 
+require_once("datos.php");
+$caSeleccionada = isset($_GET['comunidad'])?$_GET['comunidad']:'AndalucÃ­a';
+?>
+
 <head>
 	<script type="text/javascript">
-	function saludar(){
+	function accionAJAX() {
+		var provinciasS = x.responseText;
+		provinciasA = provinciasS.split('|');
+		sol = '';
+		for ( provincia of provinciasA) {
+			sol += '<option value="'+provincia+'">'+provincia+'</option>';
+		}
+		document.getElementById('idProvincias').innerHTML = sol;
 		
-		var x=new XMLHttpRequest();
-		x.open("GET","ajax.php",true);
+	}
+
+	
+	function refrescar() {
+		x = new XMLHttpRequest();
+		var ca = document.getElementById("idComunidad").value;
+		x.open("GET","ajax.php?ca="+ca,true);
 		x.send();
-		x.onreadystatechange= function(){
-			if (x.readyState==4 && x.status==200){
-				document.getElementById("optionV").value= x.responseText;
+		x.onreadystatechange = function() {
+			if (x.readyState==4 && x.status==200) {
+					accionAJAX();
 			}
 		}
-		}
+	}	
 	
 	</script>
 </head>
@@ -18,7 +35,14 @@
 	<h1>Comunidades autónomas</h1>
 	ccaa
 	<select>
-		<option id="optionV"></option>
+		<?php 
+		foreach($bd as $clave=>$valor){
+		    
+		    echo "<option value=\"$clave\">$clave</option>";
+		}
+		
+		
+		?>
 	</select>
 	
 	<br>

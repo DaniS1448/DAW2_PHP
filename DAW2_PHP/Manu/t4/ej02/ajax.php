@@ -1,6 +1,5 @@
 <?php
 require_once "datos.php";
-foreach ($bd as $clave=>$valor){
-    echo $clave;
-}
+$ca = isset($_GET['ca'])?$_GET['ca']:null;
+echo implode('|',$ccaa[$ca]);
 ?>
