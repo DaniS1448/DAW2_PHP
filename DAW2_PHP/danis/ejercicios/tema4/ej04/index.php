@@ -10,7 +10,7 @@ $pais = isset($_POST['lastLang'])?$_POST['lastLang']:'es';
 <script type="text/javascript">
 
 	function activarFormulario(){
-		var arrayEtiquetas = JSON.parse( '<?php echo json_encode($textoLogin) ?>' );
+		var arrayEtiquetas = JSON.parse( '<?= json_encode($textoLogin) ?>' );
 
 	    var pais = document.querySelector('input[name="pais"]:checked').value;
 
