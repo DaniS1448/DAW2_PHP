@@ -4,7 +4,7 @@ $esAjax = isset(
     $_SERVER['HTTP_X_REQUESTED_WITH']) ?
     strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' :
     false;
-if ($esAjax) {
+if (true) {
     $comunidad = isset($_GET['comunidad']) ? $_GET['comunidad'] : null;
     
     if ($comunidad != null) {
