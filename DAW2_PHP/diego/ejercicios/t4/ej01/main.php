@@ -1,7 +1,4 @@
-<html>
 <head>
-<title>ejercicio1</title>
-
 <script type="text/javascript">
 	function saludar(){
 		var x = new XMLHttpRequest();
@@ -20,14 +17,21 @@
 
 </script>
 </head>
-<body>
-<h1>Saludador</h1>
-<form id="formulario" method="get">
-Introduce tu nombre: <input type="text" id="nombre"/><br/>
-Introduce tu apellido: <input type="text" id="apellido"/><br/>
-<button onclick="saludar()">Saludar</button>
-<div id="div"></div>
 
-</form>
+<body>
+	<h1>Saludador</h1>
+	<form>
+		Introduce tu nombre: <input type="text" id="nombre" /><br /> 
+		Introduce tu apellido: <input type="text" id="apellido" /><br />
+	</form>
+	<div id="div"></div>
+	<button onclick="saludar()">Saludar</button>
 </body>
-</html>
+<?php 
+// cargamos el script de ajax con una funcion que envía los parametros por metodo get
+// y se recojen en unas variables que se utilizaran en un echo
+// este echo se cargará en el div de esta pagina una vez se ejecute la funcion.
+
+
+
+?>
