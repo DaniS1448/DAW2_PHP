@@ -1,6 +1,6 @@
 <?php 
 require_once("datos.php");
-$caSeleccionada = isset($_GET['comunidad'])?$_GET['comunidad']:'AndalucÃ­a';
+$caSeleccionada = isset($_GET['comunidad'])?$_GET['comunidad']:'Andalucía';
 ?>
 
 <head>
@@ -34,22 +34,26 @@ $caSeleccionada = isset($_GET['comunidad'])?$_GET['comunidad']:'AndalucÃ­a';
 <body>
 	<h1>Comunidades autónomas</h1>
 	ccaa
-	<select>
+	<select name="comunidad" onchange="refrescar()" id="idComunidad">
 		<?php 
-		foreach($bd as $clave=>$valor){
+		foreach($bd as $ca=>$provincias):?>		
 		    
-		    echo "<option value=\"$clave\">$clave</option>";
-		}
+		   <option value="<?=$ca?>" <?= $ca==$caSeleccionada?'selected="selected"':'' ?>>
+		  	<?= $ca ?> 
+		   </option>		
 		
-		
-		?>
+		<?php endforeach;?>
 	</select>
 	
 	<br>
 	
 	provincias
-	<select>
-		<option></option>
+	<select id="idProvincias">
+	<?php foreach($bd[$caSeleccionada] as $provincia):?>
+		<option>
+			<?= $provincia?>
+		</option>
+	<?php endforeach;?>	
 	</select>
 	<br>
 	<h3>Escoge una comunidad autónoma</h3>
