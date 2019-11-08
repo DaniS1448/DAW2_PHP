@@ -4,11 +4,23 @@ require_once 'bd.php';
 
 $db = conectarMySQL();
 
-$consulta = <<<SQL
+$nombre = isset($_GET['nombre'])?$_GET['nombre']:'';
+
+if ($nombre == '') {
+    
+    $consulta = <<<SQL
+    select id, nombre, apellido
+    from clientes
+SQL;
+} else {
+    $consulta = <<<SQL
     select id, nombre, apellido
     from clientes
     where nombre = '{$_GET['nombre']}'
 SQL;
+}
+
+
 
 $datos = $db->query($consulta);
 echo '<table border="1">';
