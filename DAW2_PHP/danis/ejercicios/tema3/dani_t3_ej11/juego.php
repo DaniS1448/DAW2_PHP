@@ -77,7 +77,7 @@ HTML;
         	<?php elseif (($totalJugador<$totalBanca && $totalBanca<=7.5) || $totalJugador==$totalBanca): ?>
         		<h2>HAS PERDIDO</h2>
         		<a href="inicializar.php"><button>Nuevo juego</button></a>
-        		<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas(); /*header('Location: tablero.php')*/;}?>
+        		<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {aumentarLost($_SESSION['usuario']); disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas(); /*header('Location: tablero.php')*/;}?>
         	<?php elseif ($totalJugador<$totalBanca && $totalBanca>7.5): ?>
         		<h2>HAS GANADO</h2>
         		<a href="inicializar.php"><button>Nuevo juego</button></a>
@@ -95,7 +95,7 @@ HTML;
         <?php elseif ($totalJugador > 7.5):?>
         
         	<h2>HAS PERDIDO</h2>
-        	<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas();}?>
+        	<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {aumentarLost($_SESSION['usuario']); disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas();}?>
             <br/>
             <a href="inicializar.php"><button>Nuevo juego</button></a>
         

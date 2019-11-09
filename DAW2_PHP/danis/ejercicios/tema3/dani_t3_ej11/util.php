@@ -51,6 +51,15 @@ function aumentarPuntos($user){
         
 }
 
+function aumentarLost($user){
+    
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET lost = :lost where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':lost'=>recoger($user, 'lost')+1]);
+    
+}
+
 
 
 function disminuirVidas($user){
@@ -77,16 +86,38 @@ function actualizarLastConexion($user){
 
 function crearTopBoard(){
     $db = conectarMySQL();
-    $consulta = "SELECT name, points, vidas FROM users WHERE NOT user = 'test' ORDER BY points DESC, lastconexion DESC"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
+    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT user = 'test' ORDER BY points DESC, lastconexion DESC"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
     $sentencia = $db->prepare($consulta);
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
     
-    $html = '<table><tr><th>Jugador</th><th>Puntos</th><th>Vidas</th></tr>';
+    $html = '<table border=2><tr>
+        <th>Victorias</th>
+        <th>Jugador</th>
+        <th>Vidas</th>
+        <th>Pérdidas</th>
+        <th>Partidas</th>
+        <th>V/P</th>
+        </tr>';
     
     foreach ($resultado as $res){
         
-        $html .= "<tr><td>{$res['name']}</td><td>{$res['points']}</td><td>{$res['vidas']}</td></tr>";
+        $partidasGanadasTemp = $res['points'];
+        $partidasPerdidasTemp = $res['lost'];
+        $partidasTotales = $partidasGanadasTemp+$partidasPerdidasTemp;
+        
+        if ($partidasTotales != 0) {
+            $porcentajeTemp = round($partidasGanadasTemp * 100 / $partidasTotales);
+        }
+       
+        
+        $html .= "<tr>
+        <td>$partidasGanadasTemp</td>
+        <td>{$res['name']}</td>
+        <td>{$res['vidas']}</td>
+        <td>$partidasPerdidasTemp</td>
+        <td>$partidasTotales</td>
+        <td>$porcentajeTemp%</td></tr>";
     }
     $html.='</table>';
     return $html;

@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $db = conectarMySQL();
             $consulta = "select password from users where user = :user";
             $sentencia = $db->prepare($consulta);
-            $sentencia->bindParam ( ':user', $user);
+            $sentencia->bindParam ( ':user', strtolower($user));
             $sentencia -> execute();
             $resultado = $sentencia->fetchAll();
             

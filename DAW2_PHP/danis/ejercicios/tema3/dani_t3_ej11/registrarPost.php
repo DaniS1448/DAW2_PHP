@@ -2,7 +2,7 @@
 require_once 'util.php';
 $errorExisteUsuario="Error, el usuario ya existe!";
 $usuarioCreadoCorrectamente=<<<HTML
-    Usuario creado correctamente!
+    <h2>Usuario creado correctamente!<h2>
 HTML;
 
 $esAjax = isset(
@@ -51,9 +51,9 @@ if ($esAjax) {
                 echo $errorExisteUsuario;
             } else { //no existe usuario, se procede a registrar el usuario
                 
-                $consulta = "insert into users(user, password, name, points, lastconexion, vidas) values (:user, :password, :name, :points, :lastconexion, :vidas)";
+                $consulta = "insert into users(user, password, name, points, lastconexion, vidas, lost) values (:user, :password, :name, :points, :lastconexion, :vidas, :lost)";
                 $resultado = $db->prepare($consulta);
-                $resultado->execute([':user'=>$user,':password'=>password_hash($password, PASSWORD_DEFAULT),':name'=>$name,':points'=>0,':lastconexion'=>date("Y-m-d"), 'vidas'=>VIDASDIARIAS]);
+                $resultado->execute([':user'=>strtolower($user),':password'=>password_hash($password, PASSWORD_DEFAULT),':name'=>$name,':points'=>0,':lastconexion'=>date("Y-m-d"), 'vidas'=>VIDASDIARIAS,'lost'=>0]);
                 echo $usuarioCreadoCorrectamente;
             }
             
