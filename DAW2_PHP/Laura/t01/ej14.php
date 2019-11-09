@@ -13,26 +13,26 @@ function menu() {
     
     while ($opcionEscogida < 0 || $opcionEscogida > $opcionMaxima) {
         
-        $menu = <<<'MENU'
-CRUD CORPORATIVO
-            
-Escoge una opción
-            
-DEPARTAMENTO
-1. Crear
-2. Modificar
-3. Borrar
-4. Recuperar todos
-5. Recuperar por Id
-    
-EMPLEADO
-6. Crear
-7. Modificar
-8. Borrar
-9. Recuperar todos
-10. Recuperar por Id
-    
-0. SALIR
+    $menu = <<<MENU
+    CRUD CORPORATIVO
+                
+    Escoge una opciï¿½n
+                
+    DEPARTAMENTO
+    1. Crear
+    2. Modificar
+    3. Borrar
+    4. Recuperar todos
+    5. Recuperar por Id
+        
+    EMPLEADO
+    6. Crear
+    7. Modificar
+    8. Borrar
+    9. Recuperar todos
+    10. Recuperar por Id
+
+    0. SALIR
 MENU;
         
         echo $menu.PHP_EOL.PHP_EOL;

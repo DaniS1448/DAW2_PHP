@@ -1,10 +1,34 @@
 <?php
-require_once('util.php');
 session_start();
+require_once('util.php');
+
 $_SESSION['yo'] = [];
+$_SESSION['banca'] = [];
 $_SESSION['baraja'] = inicializarMazo();
-$_SESSION['gm'] = 0;
-$_SESSION['gb'] = 0;
+$_SESSION['jugada']=true;
+
+$_SESSION['name']=recoger($_SESSION['usuario'], 'name');
+
+$arrayLastconexion = explode("-",recoger($_SESSION['usuario'], 'lastconexion'));
+$arrayHoy = explode("-",date("Y-m-d"));
+
+function resetearVidas(){
+    resetVidas($_SESSION['usuario']);
+}
+
+if ($arrayHoy[0] > $arrayLastconexion[0]) {
+    resetearVidas();
+} else if($arrayHoy[0] == $arrayLastconexion[0]){
+    if ($arrayHoy[1] > $arrayLastconexion[1]) {
+        resetearVidas();
+    } elseif ($arrayHoy[1] == $arrayLastconexion[1]){
+        if ($arrayHoy[2] > $arrayLastconexion[2]) {
+            resetearVidas();
+        }
+    }
+}
+
+actualizarLastConexion($_SESSION['usuario']);
 
 header('Location:tablero.php');
 ?>

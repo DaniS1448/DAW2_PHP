@@ -9,12 +9,12 @@
 <?php if (isset($_SESSION['yo']) && $_SESSION['yo'] == []): ?>
 (no se ha jugado ninguna carta todavía)
 <?php else: ?>
-	<?php $acc=0;?>
+	<?php $totalJugador=0;?>
 	<ul>
 	<?php foreach ($_SESSION['yo'] as $carta): ?>
 		<li>
-			<?php $acc += $carta->valor ?>
-			<?= $carta->nombre?> (total: <?= $acc ?>)
+			<?php $totalJugador += $carta->valor ?>
+			<?= $carta->nombre?> (total: <?= $totalJugador ?>)
 		</li>
 	<?php endforeach;?>
 	</ul>

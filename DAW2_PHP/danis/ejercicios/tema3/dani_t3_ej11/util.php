@@ -9,7 +9,7 @@ function inicializarMazo() {
         foreach ($figuras as $v => $figura) {
             $nombre = $figura.' de '.$palo;
             $valor = ($v<7?$v+1:0.5);
-            $img = 'img/'.substr($palo,0,1).($v+1).'.jpg';
+            $img = 'img/'.substr($palo,0,1).($v+1).'.png';
             $carta = new Carta($nombre,$valor,$img);
             $mazo[] = $carta;
         }
@@ -17,8 +17,90 @@ function inicializarMazo() {
     
     return $mazo;
 }
-    //==================================================
-    // MAIN
-    //==================================================
+
+function conectarMySQL(
+    $schema ='test',
+    $usu = 'root',
+    $pwd = '',
+    $host = 'localhost'
+    ) {
+        try {
+            $dsn = "mysql:host=$host;dbname=$schema";
+            $db = new PDO($dsn, $usu, $pwd);
+        } catch (PDOException $e){
+            print ("ERROR de conexión a $schema");
+            die();
+        }
+        return $db;
+}
+
+function recoger($user, $elemento){
+    $db = conectarMySQL();
+    $consulta = "select $elemento from users where user = :user";
+    $sentencia = $db->prepare($consulta);
+    $sentencia->bindParam ( ':user', $user);
+    $sentencia -> execute();
+    $resultado = $sentencia->fetchAll();
     
+    $datoRecogido = 0;
+    
+    foreach ($resultado as $res){
+        if (isset($res[$elemento]) && $res[$elemento] != [] ) {
+            $datoRecogido = $res[$elemento];
+        }
+    }
+    return $datoRecogido;
+}
+
+
+function aumentarPuntos($user){
+    
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET points = :points where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':points'=>recoger($user, 'points')+1]);
+        
+}
+
+
+
+function disminuirVidas($user){
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET vidas = :vidas where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':vidas'=>recoger($user, 'vidas')-1]);
+}
+
+function resetVidas($user){
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET vidas = :vidas where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':vidas'=>3]);
+}
+
+function actualizarLastConexion($user){
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET lastconexion = :lastconexion where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':lastconexion'=>date("Y-m-d")]);
+}
+
+
+function crearTopBoard(){
+    $db = conectarMySQL();
+    $consulta = "SELECT name, points FROM users ORDER BY points DESC LIMIT 5";
+    $sentencia = $db->prepare($consulta);
+    $sentencia -> execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $html = '<table><tr><th>Jugador</th><th>Puntos</th></tr>';
+    
+    foreach ($resultado as $res){
+        
+        $html .= "<tr><td>{$res['name']}</td><td>{$res['points']}</td></tr>";
+    }
+    $html.='</table>';
+    return $html;
+}
+
 ?>
