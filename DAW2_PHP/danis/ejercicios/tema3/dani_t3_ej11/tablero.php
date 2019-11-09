@@ -41,6 +41,9 @@ session_start();
 <body>
 	<div class="cajas">
 		<h2>Bienvenido <?= $_SESSION['name']; ?> a Siete y media</h2>
+		<?php if ($_SESSION['usuario'] == 'test') {
+		    resetVidas('test');
+		}?>
 		<p>5 vidas cada día</p>
     	<br>
     	Puntos total: <input type="text" id="puntostotal" value="<?php echo recoger($_SESSION['usuario'], 'points')?>" size="1" readonly>

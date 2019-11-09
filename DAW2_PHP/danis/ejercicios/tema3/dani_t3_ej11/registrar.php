@@ -39,7 +39,8 @@
 			var infoUser='';
 			var infoPassword='';
 			var infoName='';
-			var patron = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9]/;
+			var patron = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
+			var patron2 = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
 
 			var userOK = false;
 			var paswwordOK = false;
@@ -84,7 +85,7 @@
 				infoName+='<font color=\"red\">El campo nombre está vacío</font>';
 			} else if (name.length < 3 || name.length > 50) {
 				infoName+='<font color=\"red\">El nombre tener entre 5 y 50 caracteres</font>';
-			} else if (patron.test(name)){
+			} else if (patron2.test(name)){
 				infoName+='<font color=\"red\">Los caracteres en la posicion ';
 				for (var i = 0; i < name.length; i++) {
 					if(patron.test(name.charAt(i))){
