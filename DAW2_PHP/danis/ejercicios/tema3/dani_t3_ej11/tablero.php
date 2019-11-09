@@ -42,8 +42,8 @@ session_start();
 	<div class="cajas">
 		<h2>Bienvenido <?= $_SESSION['name']; ?> a Siete y media</h2>
     	<br>
-    	Puntos total: <input type="text" value="<?php echo recoger($_SESSION['usuario'], 'points')?>" size="1" readonly>
-    	Vidas hoy: <input type="text" value="<?php echo recoger($_SESSION['usuario'], 'vidas')?>" size="1" readonly>
+    	Puntos total: <input type="text" id="puntostotal" value="<?php echo recoger($_SESSION['usuario'], 'points')?>" size="1" readonly>
+    	Vidas hoy: <input type="text" id="vidashoy" value="<?php echo recoger($_SESSION['usuario'], 'vidas')?>" size="1" readonly>
     	<a href="logout.php"><button>Salir</button></a>
     	<br>
     
@@ -53,7 +53,7 @@ session_start();
 	</div>
 	
 	<div class="cajas">
-		<h2>TOP 5 Mejores jugadores</h2>
+		<h2>TOP Mejores jugadores</h2>
 		<?= crearTopBoard(); ?>
 	</div>
 
