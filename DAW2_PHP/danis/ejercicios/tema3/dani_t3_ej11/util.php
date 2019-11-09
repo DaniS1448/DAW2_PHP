@@ -108,6 +108,8 @@ function crearTopBoard(){
         
         if ($partidasTotales != 0) {
             $porcentajeTemp = round($partidasGanadasTemp * 100 / $partidasTotales);
+        } else {
+            $porcentajeTemp=100;
         }
        
         
