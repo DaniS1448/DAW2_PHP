@@ -103,6 +103,8 @@ HTML;
 	
 	<?php else: ?>
 		¡¡NO TE QUEDAN VIDAS POR HOY!!
+		<br>
+		VUELVE MAÑANA
 	<?php endif;?>
 <?php else:?>
 	<?php header('Location:login.php');?>
