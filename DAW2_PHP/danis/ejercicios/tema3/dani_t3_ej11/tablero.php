@@ -34,8 +34,33 @@ session_start();
         //background-color: yellow;
         vertical-align: top;
     }
+    
+    #topjugadores {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #topjugadores td, #topjugadores th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #topjugadores tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #topjugadores tr:hover {background-color: #ddd;}
+    
+    #topjugadores th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    
   </style>
-
+	<link rel="stylesheet" type="text/css" href="rwd-table.css">
 </head>
 
 <body>

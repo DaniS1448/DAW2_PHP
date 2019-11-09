@@ -97,15 +97,17 @@ function crearTopBoard($limite){
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
     
-    $html = '<table border=2><tr>
-        <th>Victorias</th>
+    $html = '<table class="rwd-table"><tr>
+        <th>#</th>
         <th>Jugador</th>
         <th>Vidas</th>
+        <th>Victorias</th>
         <th>Pérdidas</th>
         <th>Partidas</th>
         <th>V/P</th>
         </tr>';
     
+    $contadorTopJugadores=1;
     foreach ($resultado as $res){
         
         $partidasGanadasTemp = $res['points'];
@@ -120,12 +122,15 @@ function crearTopBoard($limite){
        
         
         $html .= "<tr>
-        <td>$partidasGanadasTemp</td>
+        <td>$contadorTopJugadores</td>
         <td>{$res['name']}</td>
         <td>{$res['vidas']}</td>
+        <td>$partidasGanadasTemp</td>
         <td>$partidasPerdidasTemp</td>
         <td>$partidasTotales</td>
         <td>$porcentajeTemp%</td></tr>";
+        
+        $contadorTopJugadores++;
     }
     $html.='</table>';
     return $html;
