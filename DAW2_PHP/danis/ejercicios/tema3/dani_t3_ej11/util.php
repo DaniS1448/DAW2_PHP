@@ -74,16 +74,16 @@ function actualizarLastConexion($user){
 
 function crearTopBoard(){
     $db = conectarMySQL();
-    $consulta = "SELECT name, points FROM users ORDER BY points DESC LIMIT 5";
+    $consulta = "SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5";
     $sentencia = $db->prepare($consulta);
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
     
-    $html = '<table><tr><th>Jugador</th><th>Puntos</th></tr>';
+    $html = '<table><tr><th>Jugador</th><th>Puntos</th><th>Vidas</th></tr>';
     
     foreach ($resultado as $res){
         
-        $html .= "<tr><td>{$res['name']}</td><td>{$res['points']}</td></tr>";
+        $html .= "<tr><td>{$res['name']}</td><td>{$res['points']}</td><td>{$res['vidas']}</td></tr>";
     }
     $html.='</table>';
     return $html;

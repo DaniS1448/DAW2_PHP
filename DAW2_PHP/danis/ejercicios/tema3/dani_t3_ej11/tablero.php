@@ -53,7 +53,7 @@ session_start();
 	</div>
 	
 	<div class="cajas">
-		<h2>TOP Mejores jugadores</h2>
+		<h2>TOP 5 Mejores jugadores</h2>
 		<?= crearTopBoard(); ?>
 	</div>
 
