@@ -1,6 +1,9 @@
 <?php
 require_once 'Carta.php';
 require_once 'bd.php';
+
+define ('VIDASDIARIAS',5);
+
 function inicializarMazo() {
     $mazo = [];
     $palos = ['oros','copas','espadas','bastos'];
@@ -61,7 +64,7 @@ function resetVidas($user){
     $db = conectarMySQL();
     $consulta = "UPDATE users SET vidas = :vidas where user = :user";
     $resultado = $db->prepare($consulta);
-    $resultado->execute([':user'=>$user,':vidas'=>3]);
+    $resultado->execute([':user'=>$user,':vidas'=>VIDASDIARIAS]);
 }
 
 function actualizarLastConexion($user){

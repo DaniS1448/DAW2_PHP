@@ -53,7 +53,7 @@ if ($esAjax) {
                 
                 $consulta = "insert into users(user, password, name, points, lastconexion, vidas) values (:user, :password, :name, :points, :lastconexion, :vidas)";
                 $resultado = $db->prepare($consulta);
-                $resultado->execute([':user'=>$user,':password'=>password_hash($password, PASSWORD_DEFAULT),':name'=>$name,':points'=>0,':lastconexion'=>date("Y-m-d"), 'vidas'=>3]);
+                $resultado->execute([':user'=>$user,':password'=>password_hash($password, PASSWORD_DEFAULT),':name'=>$name,':points'=>0,':lastconexion'=>date("Y-m-d"), 'vidas'=>VIDASDIARIAS]);
                 echo $usuarioCreadoCorrectamente;
             }
             
