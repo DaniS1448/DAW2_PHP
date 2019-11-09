@@ -23,6 +23,10 @@
     		x.onreadystatechange=function(){
     			if(x.readyState == 4 && x.status==200){
     				document.getElementById("resultado").innerHTML=x.responseText;
+
+    				if(x.responseText.includes('Usuario creado correctamente')){
+    					setTimeout('window.location.href = "login.php"', 3000);
+    				}
     			}
     		}
     	}
@@ -96,9 +100,6 @@
 			if(userOK && paswwordOK && nameOK){
 				registrarUsuario();
 			}
-
-
-
 
 			document.getElementById("validUser").innerHTML=infoUser;
 			document.getElementById("validPassword").innerHTML=infoPassword;
