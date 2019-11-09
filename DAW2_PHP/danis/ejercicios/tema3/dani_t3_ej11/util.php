@@ -1,5 +1,6 @@
 <?php
 require_once 'Carta.php';
+require_once 'bd.php';
 function inicializarMazo() {
     $mazo = [];
     $palos = ['oros','copas','espadas','bastos'];
@@ -18,21 +19,6 @@ function inicializarMazo() {
     return $mazo;
 }
 
-function conectarMySQL(
-    $schema ='test',
-    $usu = 'root',
-    $pwd = '',
-    $host = 'localhost'
-    ) {
-        try {
-            $dsn = "mysql:host=$host;dbname=$schema";
-            $db = new PDO($dsn, $usu, $pwd);
-        } catch (PDOException $e){
-            print ("ERROR de conexión a $schema");
-            die();
-        }
-        return $db;
-}
 
 function recoger($user, $elemento){
     $db = conectarMySQL();
