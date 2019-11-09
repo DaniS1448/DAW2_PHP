@@ -84,9 +84,15 @@ function actualizarLastConexion($user){
 }
 
 
-function crearTopBoard(){
+function crearTopBoard($limite){
     $db = conectarMySQL();
-    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT user = 'test' ORDER BY points DESC, lastconexion DESC"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
+    
+    if ($limite == 0) {
+        $limite='';
+    }else {
+        $limite = "LIMIT $limite";
+    }
+    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT user = 'test' ORDER BY points DESC, lastconexion DESC $limite"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
     $sentencia = $db->prepare($consulta);
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();

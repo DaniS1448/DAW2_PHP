@@ -54,8 +54,10 @@ session_start();
 	</div>
 	
 	<div class="cajas">
-		<h2>TOP Mejores jugadores</h2>
-		<?= crearTopBoard(); ?>
+		<h2>TOP 10 Mejores jugadores</h2>
+		<?= crearTopBoard(10); ?>
+		<br>
+		<a href="verTodos.php"><button>Ver todos los jugadores</button></a>
 	</div>
 
 </body>
