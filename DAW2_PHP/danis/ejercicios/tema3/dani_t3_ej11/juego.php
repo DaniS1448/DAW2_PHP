@@ -134,9 +134,9 @@ HTML;
 	
 	<?php else: ?>
 	<?php $_SESSION['quedanVidas'] = false;?>
-		¡¡NO TE QUEDAN VIDAS POR HOY!!
+		<div class="resultado Perdida">¡¡NO TE QUEDAN VIDAS POR HOY!!
 		<br>
-		VUELVE MAÑANA
+		<span class="Victoria">VUELVE MAÑANA</span></div>
 	<?php endif;?>
 <?php else:?>
 	<?php header('Location:login.php');?>
