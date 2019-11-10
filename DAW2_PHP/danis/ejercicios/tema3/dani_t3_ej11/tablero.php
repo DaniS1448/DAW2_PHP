@@ -26,8 +26,8 @@ session_start();
     			<h2>Bienvenido <span><?= $_SESSION['name']; ?>.</span></h2><?php if ($_SESSION['usuario'] == 'test') {resetVidas('test');}?>
     		</div>
     		
-        	<span class="estadisticas">Victorias: <span class="victorias"><?= recoger($_SESSION['usuario'], 'points')?></span></span>
-        	<span class="estadisticas">Vidas: <span class="vidas"><?= recoger($_SESSION['usuario'], 'vidas')?></span></span>
+        	<span class="estadisticas">Victorias: <span id="puntostotal" class="victorias"><?= recoger($_SESSION['usuario'], 'points')?></span></span>
+        	<span class="estadisticas">Vidas: <span id="vidashoy" class="vidas"><?= recoger($_SESSION['usuario'], 'vidas')?></span></span>
         	<a href="logout.php"><button class="boton_principal">Salir</button></a>
         	<br>
         

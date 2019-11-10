@@ -13,8 +13,8 @@ function scriptActualizarPuntosVidas(){
     
     echo <<<HTML
         <script>
-            document.getElementById("puntostotal").value=$puntosScript;
-        	document.getElementById("vidashoy").value=$vidasScript;
+            document.getElementById("puntostotal").innerHTML=$puntosScript;
+        	document.getElementById("vidashoy").innerHTML=$vidasScript;
         </script>
 HTML;
 }
