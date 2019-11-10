@@ -97,10 +97,11 @@ function crearTopBoard($limite){
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
     
+    //<th>Vidas</th>
     $html = '<table class="rwd-table"><tr>
         <th>#</th>
         <th>Jugador</th>
-        <th>Vidas</th>
+        
         <th>Victorias</th>
         <th>Pérdidas</th>
         <th>Partidas</th>
@@ -120,11 +121,11 @@ function crearTopBoard($limite){
             $porcentajeTemp=100;
         }
        
-        
+        //<td>{$res['vidas']}</td>
         $html .= "<tr>
         <td>$contadorTopJugadores</td>
         <td>{$res['name']}</td>
-        <td>{$res['vidas']}</td>
+        
         <td>$partidasGanadasTemp</td>
         <td>$partidasPerdidasTemp</td>
         <td>$partidasTotales</td>
@@ -134,6 +135,21 @@ function crearTopBoard($limite){
     }
     $html.='</table>';
     return $html;
+}
+
+function recogerUsuarios(){
+    $db = conectarMySQL();
+    $consulta = "select user, lastconexion from users";
+    $sentencia = $db->prepare($consulta);
+    $sentencia -> execute();
+    $resultado = $sentencia->fetchAll();
+    
+    $datosRecogidos = [];
+    
+    foreach ($resultado as $res){
+        $datosRecogidos += [$res['user']=>$res['lastconexion']];
+    }
+    return $datosRecogidos;
 }
 
 ?>
