@@ -1,13 +1,5 @@
-<?php
-require_once 'bd.php';
-
-$db = conectarMySQL();
-
-$consulta = <<<SQL
-    insert into clientes (id, nombre, apellido)
-    values (0, 'pepe', 'peloto')
-SQL;
-
-$db->exec($consulta);
-echo 'Fila insertada';
-?>
+<form action="introducirPost.php">
+Nombre: <input type="text" name='nombre'><br>
+Apellido: <input type="text" name='apellido'><br>
+<input type="submit" value="Introducir">
+</form>
