@@ -70,6 +70,10 @@ h1 {
 	text-shadow: 0px 1px 0px #ffee66;
 }
 
+.estadisticas .victorias, .estadisticas .vidas{
+	color: #ffab23;
+}
+
 .resultado0 {
 	margin-top: 15px;
 	text-align: center;
@@ -112,4 +116,36 @@ h1 {
 .Perdida {
 	text-shadow: -5px 5px 0px #ff738d, -10px 10px 0px #fc3d50, -15px 15px
 		0px #ff1f35;
+}
+
+.jugada{
+	margin-top: 30px;
+	padding: 5px 0px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #ffc423;
+}
+
+.jugador{
+	background: #00bdbd;
+	background: #ffc423;
+}
+
+.banca{
+	background: #fc3d50;
+	margin-top: 15px;
+}
+
+.carta{
+	width: 90px;
+	height: 135px;
+}
+
+.carta{
+	width: 100px;
+	height: 150px;
 }

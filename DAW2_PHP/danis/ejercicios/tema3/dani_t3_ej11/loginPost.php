@@ -16,10 +16,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             require_once 'util.php';
             
+            $user = strtolower($user);
+            
             $db = conectarMySQL();
             $consulta = "select password from users where user = :user";
             $sentencia = $db->prepare($consulta);
-            $sentencia->bindParam ( ':user', strtolower($user));
+            $sentencia->bindParam ( ':user', $user);
             $sentencia -> execute();
             $resultado = $sentencia->fetchAll();
             

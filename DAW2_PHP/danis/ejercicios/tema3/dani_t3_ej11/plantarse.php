@@ -2,7 +2,7 @@
     require_once 'Carta.php';
     session_start();
 
-    if (isset($_SESSION['activo']) && $_SESSION['activo'] == true){
+    if (isset($_SESSION['activo']) && $_SESSION['activo'] == true && $_SESSION['quedanVidas'] == true){
         $totalJugador=0;
         
         foreach ($_SESSION['yo'] as $carta){
