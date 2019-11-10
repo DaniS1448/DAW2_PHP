@@ -7,7 +7,7 @@
   <title>Registrar | Siete y media</title>
   <meta name="description" content="Registrar | Siete y media">
   <meta name="author" content="DaniS1448">
-  
+  <link rel="stylesheet" type="text/css" href="css/cssprincipal.css">
   
     <script type="text/javascript">
     	function registrarUsuario(){
