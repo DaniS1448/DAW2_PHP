@@ -24,7 +24,7 @@ session_start();
     	
     		<div class="divTitulo">
     			<h2>Bienvenido <span><?= $_SESSION['name']; ?>.</span></h2>
-    			<?php if (substr($_SESSION['usuario'], 0,4 ) == 'test') {resetVidas('test');}?>
+    			<?php if (substr($_SESSION['usuario'],0,4) == 'test') {resetVidas($_SESSION['usuario']);}?>
     		</div>
     		
         	<span class="estadisticas">Victorias: <span id="puntostotal" class="victorias"><?= recoger($_SESSION['usuario'], 'points')?></span></span>
