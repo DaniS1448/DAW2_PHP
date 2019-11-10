@@ -134,7 +134,7 @@ HTML;
 	
 	<?php else: ?>
 	<?php $_SESSION['quedanVidas'] = false;?>
-		<div class="resultado Perdida">¡¡NO TE QUEDAN VIDAS POR HOY!!
+		<div class="resultadoSinVidas Perdida">¡¡NO TE QUEDAN <br>VIDAS POR HOY!!
 		<br>
 		<span class="Victoria">VUELVE MAÑANA</span></div>
 	<?php endif;?>

@@ -103,6 +103,22 @@ h1 {
 	background: #34495E;
 }
 
+.resultadoSinVidas {
+	margin-top: 15px;
+	transform: translateX(-15px);
+	padding: 0px 20px;
+	min-height: 160px;
+	border-radius: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 70px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 145px;
+	color: #FFFFFF;
+	background: #34495E;
+}
+
 .VictoriaNaranja {
 	text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px
 		0px #ffab23;
