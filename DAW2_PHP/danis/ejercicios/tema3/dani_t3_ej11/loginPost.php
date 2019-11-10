@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($credencialesOK) {
                 
                 $_SESSION['activo']=true;
-                $_SESSION['usuario']=$user;
+                $_SESSION['usuario']=strtolower($user);
                 
                 header('Location: inicializar.php');
             } else {

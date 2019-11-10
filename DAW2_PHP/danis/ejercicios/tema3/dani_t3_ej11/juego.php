@@ -115,16 +115,16 @@ HTML;
         	<?php if ($totalBanca==0):?>
 
         	<?php elseif (($totalJugador<$totalBanca && $totalBanca<=7.5) || $totalJugador==$totalBanca): ?>
-        		<h2>HAS PERDIDO</h2>
+        		<div class="resultadoPerdida">HAS PERDIDO</div>
         	<?php elseif ($totalJugador<$totalBanca && $totalBanca>7.5): ?>
-        		<h2>HAS GANADO</h2>
+        		<div class="resultadoVictoria">HAS GANADO</div>
         	<?php endif; ?>
 
         <?php elseif ($totalJugador==7.5): ?>
-        	<h2>HAS GANADO</h2>
+        	<div class="resultadoVictoria">HAS GANADO</div>
         
         <?php elseif ($totalJugador > 7.5):?>
-            <h2>HAS PERDIDO</h2>
+            <div class="resultadoPerdida">HAS PERDIDO</div>
         
         <?php endif; ?>
         <!-- FIN PARTE DE LOS BOTONES PARA JUGAR -->

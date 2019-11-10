@@ -23,16 +23,12 @@ session_start();
 		<div class="cajas">
     	
     		<div class="divTitulo">
-    			<h2>Bienvenido <span><?= $_SESSION['name']; ?>.</span></h2>
+    			<h2>Bienvenido <span><?= $_SESSION['name']; ?>.</span></h2><?php if ($_SESSION['usuario'] == 'test') {resetVidas('test');}?>
     		</div>
-    		<?php if ($_SESSION['usuario'] == 'test') {
-    		    resetVidas('test');
-    		}?>
-    		<p>5 vidas cada día</p>
-        	<br>
-        	Puntos total: <input type="text" id="puntostotal" value="<?php echo recoger($_SESSION['usuario'], 'points')?>" size="1" readonly>
-        	Vidas hoy: <input type="text" id="vidashoy" value="<?php echo recoger($_SESSION['usuario'], 'vidas')?>" size="1" readonly>
-        	<a href="logout.php"><button>Salir</button></a>
+    		
+        	<span class="estadisticas">Victorias: <?= recoger($_SESSION['usuario'], 'points')?></span>
+        	<span class="estadisticas">Vidas: <?= recoger($_SESSION['usuario'], 'vidas')?></span>
+        	<a href="logout.php"><button class="boton_principal">Salir</button></a>
         	<br>
         
         	<div class="juego">

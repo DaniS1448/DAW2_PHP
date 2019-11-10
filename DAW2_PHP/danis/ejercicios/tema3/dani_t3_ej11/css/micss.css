@@ -1,3 +1,18 @@
+body {
+	padding: 0 2em;
+	font-family: Montserrat, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	background: #eee;
+}
+
+h1 {
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #34495E;
+}
+
 .juego {
 	padding: 1em; //
 	width: 615px; //
@@ -15,33 +30,6 @@
 	vertical-align: top;
 }
 
-#topjugadores {
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-#topjugadores td, #topjugadores th {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-#topjugadores tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-#topjugadores tr:hover {
-	background-color: #ddd;
-}
-
-#topjugadores th {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	text-align: left;
-	background-color: #4CAF50;
-	color: white;
-}
-
 .divTitulo {
 	background-color: #46637f;
 	color: #fff;
@@ -53,7 +41,7 @@
 }
 
 .divTitulo span {
-	color: #dd5;
+	color: #ffab23;
 }
 
 .pagina {
@@ -66,12 +54,11 @@
 	text-align: center;
 }
 
-.boton {
-	box-shadow: 0px 1px 0px 0px #fff6af;
-	background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color: #ffec64;
+.estadisticas {
+	box-shadow: 0px 1px 0px 0px #6f91b3;
+	background-color: transparent;
 	border-radius: 6px;
-	border: 1px solid #ffaa22;
+	border: 1px solid #34495E;
 	display: inline-block;
 	cursor: pointer;
 	color: #333333;
@@ -83,29 +70,62 @@
 	text-shadow: 0px 1px 0px #ffee66;
 }
 
-.boton:hover {
-	background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-	background-color: #ffab23;
+.resultado0 {
+	margin-top: 15px;
+	text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    padding: 30px 5px;
+	color: #fff;
+	background-color: #696969;
+	text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px
+		0, #aaa 0 5px 0, rgba(0, 0, 0, .1) 0 6px 1px, rgba(0, 0, 0, .1) 0 0
+		5px, rgba(0, 0, 0, .3) 0 1px 3px, rgba(0, 0, 0, .15) 0 3px 5px,
+		rgba(0, 0, 0, .2) 0 5px 10px, rgba(0, 0, 0, .2) 0 10px 10px,
+		rgba(0, 0, 0, .1) 0 20px 20px;
 }
 
-.boton:active {
-	position: relative;
-	top: 1px;
+.resultadoVictoria, .resultadoNaranja{
+	margin-top: 15px;
+	height: 160px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 145px;
+    color: #FFFFFF;
+    background: #34495E;
+    text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px 0px #ffab23;
 }
 
-.boton:disabled, .boton[disabled] {
-	box-shadow: 0px 1px 0px 0px #899599;
-	background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
-	background-color: #ededed;
-	border-radius: 6px;
-	border: 1px solid #d6bcd6;
-	display: inline-block;
-	cursor: pointer;
-	color: #333333;
-	font-family: Arial;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 6px 24px;
-	text-decoration: none;
-	text-shadow: 0px -1px 0px #e1e2ed;
+.resultadoVictoria, .resultadoTurquesa{
+	margin-top: 15px;
+	height: 160px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 145px;
+    color: #FFFFFF;
+    background: #34495E;
+    text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #01cccc, -15px 15px 0px #00bdbd;
+}
+
+.resultadoPerdida, .resultadoRojo{
+	margin-top: 15px;
+	height: 160px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 145px;
+    color: #FFFFFF;
+    background: #34495E;
+    text-shadow: -5px 5px 0px #ff738d, -10px 10px 0px #fc3d50, -15px 15px 0px #ff1f35;
 }
