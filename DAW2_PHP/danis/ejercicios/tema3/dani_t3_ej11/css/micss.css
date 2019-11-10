@@ -73,9 +73,9 @@ h1 {
 .resultado0 {
 	margin-top: 15px;
 	text-align: center;
-    font-weight: bold;
-    font-size: 35px;
-    padding: 30px 5px;
+	font-weight: bold;
+	font-size: 35px;
+	padding: 30px 5px;
 	color: #fff;
 	background-color: #696969;
 	text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px
@@ -85,47 +85,31 @@ h1 {
 		rgba(0, 0, 0, .1) 0 20px 20px;
 }
 
-.resultadoVictoria, .resultadoNaranja{
+.resultado {
 	margin-top: 15px;
 	height: 160px;
-    border-radius: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 145px;
-    color: #FFFFFF;
-    background: #34495E;
-    text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px 0px #ffab23;
+	border-radius: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 70px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 145px;
+	color: #FFFFFF;
+	background: #34495E;
 }
 
-.resultadoVictoria, .resultadoTurquesa{
-	margin-top: 15px;
-	height: 160px;
-    border-radius: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 145px;
-    color: #FFFFFF;
-    background: #34495E;
-    text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #01cccc, -15px 15px 0px #00bdbd;
+.VictoriaNaranja {
+	text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px
+		0px #ffab23;
 }
 
-.resultadoPerdida, .resultadoRojo{
-	margin-top: 15px;
-	height: 160px;
-    border-radius: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: bold;
-    line-height: 145px;
-    color: #FFFFFF;
-    background: #34495E;
-    text-shadow: -5px 5px 0px #ff738d, -10px 10px 0px #fc3d50, -15px 15px 0px #ff1f35;
+.Victoria {
+	text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #01cccc, -15px 15px
+		0px #00bdbd;
+}
+
+.Perdida {
+	text-shadow: -5px 5px 0px #ff738d, -10px 10px 0px #fc3d50, -15px 15px
+		0px #ff1f35;
 }
