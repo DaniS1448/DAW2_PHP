@@ -77,7 +77,7 @@
 			var infoUser='';
 			var infoPassword='';
 			var infoName='';
-			var patron = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
+			var patron = /[^a-zA-Z0-9]/;
 			var patron2 = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
 
 			var userOK = false;
