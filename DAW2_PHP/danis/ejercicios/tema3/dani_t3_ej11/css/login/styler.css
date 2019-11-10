@@ -102,8 +102,8 @@
     outline: none; /* Remove Chrome outline */
 }
 
-.form-3 p:nth-child(3),
-.form-3 p:nth-child(4) {
+.form-3 p:nth-child(4),
+.form-3 p:nth-child(5) {
     float: left;
     width: 50%;
 }

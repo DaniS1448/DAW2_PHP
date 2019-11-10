@@ -19,7 +19,7 @@ if (isset($_SESSION['activo']) && $_SESSION['activo'] == true) :?>
   <?php //echo '<link rel="stylesheet" type="text/css" href="css/login.css">'?>
   <link rel="stylesheet" type="text/css" href="css/login/style.css" />
    <style type="text/css">
-    .divPrin{
+    .divPrin2{
         transform: scale(2) translate(0px,0px);
         transform-origin: 50 0;
         //margin-top: 100 px;
@@ -47,25 +47,10 @@ if (isset($_SESSION['activo']) && $_SESSION['activo'] == true) :?>
     	text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px
 		0px #ffab23;
     }
-    
-    @media screen and ( max-height: 600px ){
-        background: blue;
-    }
-    
-    @media only screen and (max-width: 1000px) and (min-height: 1400px) {
-        body {
-            background-color: lightblue;
-          }
-          
-          h1 {
-            transform: scale(2) translate(155px,150px);
-        }
-      .divPrin{
-        transform-origin: 0 0;
-        transform: scale(4.5) translate(-310px,150px);
-       }
-}
+
   </style>
+  
+  <link rel="stylesheet" type="text/css" href="css/login/resp.css2" />
 </head>
 <body>
 	<h1 class="resultado">Siete y media | DAW2</h1>
