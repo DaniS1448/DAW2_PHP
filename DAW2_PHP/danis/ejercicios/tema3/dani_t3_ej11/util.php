@@ -92,7 +92,7 @@ function crearTopBoard($limite){
     }else {
         $limite = "LIMIT $limite";
     }
-    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT user = 'test' ORDER BY points DESC, lastconexion DESC $limite"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
+    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT lower(user) LIKE 'test%' ORDER BY points DESC, lastconexion DESC $limite"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
     $sentencia = $db->prepare($consulta);
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
