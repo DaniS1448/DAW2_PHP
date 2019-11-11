@@ -123,7 +123,7 @@ HTML;
 
         <?php elseif ($totalJugador==7.5): ?>
         	<div class="resultado Victoria">HAS GANADO</div>
-        	<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {aumentarPuntos($_SESSION['usuario']); disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas();}?>
+        	<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {aumentarPuntos($_SESSION['usuario']); /*disminuirVidas($_SESSION['usuario']);*/ $_SESSION['jugada']=false; scriptActualizarPuntosVidas(); aumentarPerfect($_SESSION['usuario']);}?>
         <?php elseif ($totalJugador > 7.5):?>
             <div class="resultado Perdida">HAS PERDIDO</div>
         	<?php if (isset($_SESSION['jugada']) && $_SESSION['jugada']) {aumentarLost($_SESSION['usuario']); disminuirVidas($_SESSION['usuario']); $_SESSION['jugada']=false; scriptActualizarPuntosVidas();}?>

@@ -2,6 +2,7 @@
 require_once 'Carta.php';
 require_once 'util.php';
 session_start();
+header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
 ?>
 
 
@@ -15,7 +16,9 @@ session_start();
   <title>Siete y media | DAW2</title>
   <meta name="description" content="Siete y media | DAW2">
   <meta name="author" content="DaniS1448">
-  <link rel="stylesheet" type="text/css" href="css/cssprincipal.css">
+  <link rel="stylesheet" type="text/css" href="css/rwd-table.css?v=1.1">
+  <link rel="stylesheet" type="text/css" href="css/micss.css?v=1.1">
+  <link rel="stylesheet" type="text/css" href="css/botones.css?v=1.1">
 </head>
 
 <body>
@@ -31,13 +34,16 @@ session_start();
         	<span class="estadisticas">Vidas: <span id="vidashoy" class="vidas"><?= recoger($_SESSION['usuario'], 'vidas')?></span></span>
         	<a href="logout.php"><button class="boton_principal">Salir</button></a>
         	<br>
-        
         	<div class="juego">
         		<?php include_once 'juego.php';?>
         	</div>
     	</div>
     	
     	<div class="cajas">
+    		
+    		<div class="nuveasReglas">Si empatas -> gana la banca<br>
+    		Si sacas 7.5 -> no pierdes vida.</div><br><br>
+    		
     		<h2>TOP 10 Mejores jugadores</h2>
     		<?= crearTopBoard(10); ?>
     		<br>

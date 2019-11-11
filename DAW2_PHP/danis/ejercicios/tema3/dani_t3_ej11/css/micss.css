@@ -166,3 +166,12 @@ h1 {
 	width: 100px;
 	height: 150px;
 }
+
+.nuveasReglas{
+	padding: 10px 20px;
+	color: #34495E;
+	background-color: #ffab23;
+	border-radius: 10px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
