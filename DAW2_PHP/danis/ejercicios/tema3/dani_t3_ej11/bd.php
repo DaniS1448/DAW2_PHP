@@ -1,9 +1,9 @@
 <?php
 function conectarMySQL(
-    $schema ='daw2_7media',
-    $usu = 'daw2_us',
-    $pwd = 'EvNmcATQd5',
-    $host = 'daniserver.com'
+    $schema ='test',
+    $usu = 'root',
+    $pwd = '',
+    $host = 'localhost'
     ) {
         try {
             $dsn = "mysql:host=$host;dbname=$schema";
