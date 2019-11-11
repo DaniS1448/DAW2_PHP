@@ -111,9 +111,9 @@ function crearTopBoard($limite){
         <th>#</th>
         <th>Jugador</th>
         
-        <th>Victorias</th>
-        <th>Pérdidas</th>
-        <th>Partidas</th>
+        <th>V</th>
+        <th>P</th>
+        <th>J</th>
         <th>V/P</th>
         <th>7.5</th>
         </tr>';
