@@ -33,7 +33,7 @@
             
         }while($totalBanca<$totalJugador);
         
-        header('Location:tablero.php');
+        header('Location:tablero.php#jugar');
     } else {
         header('Location:login.php');
     }

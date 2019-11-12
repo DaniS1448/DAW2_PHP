@@ -60,6 +60,15 @@ function aumentarLost($user){
     
 }
 
+function aumentarPerfect($user){
+    
+    $db = conectarMySQL();
+    $consulta = "UPDATE users SET perfect = :perfect where user = :user";
+    $resultado = $db->prepare($consulta);
+    $resultado->execute([':user'=>$user,':perfect'=>recoger($user, 'perfect')+1]);
+    
+}
+
 
 
 function disminuirVidas($user){
@@ -92,7 +101,7 @@ function crearTopBoard($limite){
     }else {
         $limite = "LIMIT $limite";
     }
-    $consulta = "SELECT name, points, vidas, lost FROM users WHERE NOT lower(user) LIKE 'test%' ORDER BY points DESC, lastconexion DESC $limite"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
+    $consulta = "SELECT name, points, vidas, lost, perfect FROM users WHERE NOT lower(user) LIKE 'test%' ORDER BY points DESC, lastconexion DESC $limite"; //SELECT name, points, vidas FROM users ORDER BY points DESC LIMIT 5
     $sentencia = $db->prepare($consulta);
     $sentencia -> execute();
     $resultado = $sentencia->fetchAll();
@@ -102,10 +111,11 @@ function crearTopBoard($limite){
         <th>#</th>
         <th>Jugador</th>
         
-        <th>Victorias</th>
-        <th>Pérdidas</th>
-        <th>Partidas</th>
+        <th>V</th>
+        <th>P</th>
+        <th>J</th>
         <th>V/P</th>
+        <th>7.5</th>
         </tr>';
     
     $contadorTopJugadores=1;
@@ -129,7 +139,9 @@ function crearTopBoard($limite){
         <td>$partidasGanadasTemp</td>
         <td>$partidasPerdidasTemp</td>
         <td>$partidasTotales</td>
-        <td>$porcentajeTemp%</td></tr>";
+        <td>$porcentajeTemp%</td>
+        <td>{$res['perfect']}</td></tr>";
+        
         
         $contadorTopJugadores++;
     }

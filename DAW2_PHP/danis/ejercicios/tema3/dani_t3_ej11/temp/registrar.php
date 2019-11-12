@@ -7,46 +7,8 @@
   <title>Registrar | Siete y media</title>
   <meta name="description" content="Registrar | Siete y media">
   <meta name="author" content="DaniS1448">
-  <link rel="stylesheet" type="text/css" href="css/login/styler.css" />
-   <style type="text/css">
-   
-   h2{
-    text-align: center;
-    margin-top: 15px;
-    color: white;
-   }
-    .divPrin2{
-        transform: scale(2) translate(0px,0px);
-        transform-origin: 50 0;
-        //margin-top: 100 px;
-    }
-    
-    h1 {
-        
-        text-align: center; 
-    	font-weight: normal;
-    	letter-spacing: -1px;
-    	color: #34495E;
-    }
-    
-    .resultado {
-    	margin-top: 15px;
-    	min-height: 160px;
-    	border-radius: 10px;
-    	width: 100%;
-    	text-align: center;
-    	font-size: 60px;
-    	text-transform: uppercase;
-    	font-weight: bold;
-    	line-height: 145px;
-    	color: #FFFFFF;
-    	text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px
-		0px #ffab23;
-    }
-    
-
-  </style>
-  <link rel="stylesheet" type="text/css" href="css/login/resp.css2" />
+  <link rel="stylesheet" type="text/css" href="css/cssprincipal.css">
+  
     <script type="text/javascript">
     	function registrarUsuario(){
     		var x = new XMLHttpRequest();
@@ -77,7 +39,7 @@
 			var infoUser='';
 			var infoPassword='';
 			var infoName='';
-			var patron = /[^a-zA-Z0-9]/;
+			var patron = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
 			var patron2 = /[^a-zA-ZçÇáÁíÍóÓéÉúÚ0-9 ]/;
 
 			var userOK = false;
@@ -147,37 +109,30 @@
     
     </script>
 
-</head>    	
-    	<h1 class="resultado">Siete y media | REGISTRO</h1>
-	<div class="divPrin">
-		<div class="form-3">
-            <p class="clearfix">
-            	<span id="validUser"></span>
-                <label for="user">Usuario</label>
-                <input type="text" name="user" id="user" placeholder="Usuario">
-            </p>
-            <p class="clearfix">
-            	<span id="validPassword"></span>
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" placeholder="Contraseña">
-            </p>
-            <p class="clearfix">
-            	<span id="validName"></span>
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Nombre">
-            </p>
-            
-            <p class="clearfix">
-                <a href="login.php"><input type="button" value="Iniciar sesión"></a>
-            </p>  
-			<p class="clearfix">
-                <button type="button" class="btnReg" onclick="validarDatos();">Registrar</button>
-            </p>
-            <p class="clearfix">
-                <div id="resultado"></div>
-            </p> 
-        </div>
-	</div>
+</head>
+	<table>
+		<tr>
+			<td>Usuario:</td>
+			<td><input type="text" name="user" id="user"></td>	
+			<td id="validUser"></td>		
+		</tr>
+		<tr>
+			<td>Contraseña:</td>
+			<td><input type="password" name="password" id="password"></td>
+			<td id="validPassword"></td>
+		</tr>
+		<tr>
+			<td>Nombre completo:</td>
+			<td><input type="text" name="name" id="name"></td>
+			<td id="validName"></td>
+		</tr>
+		<tr>
+			<td><a href="login.php"><button>Iniciar sesión</button></a></td>
+			<td><button onclick="validarDatos();">Registrar</button></td>
+		</tr>
+	</table>
+    	
+    	<div id="resultado"></div>
 <body>
 </body>
 </html>
