@@ -2,8 +2,6 @@
 $inf=$_GET['inf'];
 $sup=$_GET['sup'];
 
-
-
 $signos = [
     "Capricornio",
     "Acuario",
@@ -35,7 +33,6 @@ $meses = [
 ];
 
 ?>
-
 
 <head>
 </head>

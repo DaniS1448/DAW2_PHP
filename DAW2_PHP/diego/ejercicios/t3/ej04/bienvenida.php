@@ -20,7 +20,7 @@ if ($credencialesCorrectas) {
     
     echo <<<HTML
 		Conectado como $usuario <br/>
-		N&uacute;mero de visitas $nVisitas<br/>
+		Número de visitas $nVisitas<br/>
 		<form action="login.php">
 HTML;
     pintarBanderas ( $bandera );

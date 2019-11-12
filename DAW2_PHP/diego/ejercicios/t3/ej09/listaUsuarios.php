@@ -1,20 +1,21 @@
 <?php
 session_start();
-// ingresa sesion con el nombre ingresado en el login
+// si la sesion recordar no esta creada la crea y le da valor true para empezar a recordar usuario logueado
 if (! isset($_SESSION['_recordar'])) {
     $_SESSION['_recordar'] = true;
 }
-
+// la sesion guarda como activo al usuario logueado
 echo "Usuario actual {$_SESSION['_activo']}";
 echo "<h2>Lista de usuarios / mensajes</h2><br/>";
+// si la estructura del array no esta creada, la crea.
 if (! isset($_SESSION['usuarios'][$_SESSION['_activo']]['mensajes'])) {
     $_SESSION['usuarios'][$_SESSION['_activo']]['mensajes'] = [];
 }
+// abre tabla fuera del bucle
 echo "<table>";
-// me listas todos los usuarios creados
+// me listas todos los usuarios creados como clave con su valor
 foreach ($_SESSION['usuarios'] as $k => $v) {
-    // si no es el usuario activo
-    
+    // si no es el usuario activo   
     if ($k != $_SESSION['_activo']) {
         // solo me muestra leer
         //echo "$k ";
@@ -41,6 +42,7 @@ foreach ($_SESSION['usuarios'] as $k => $v) {
     }
     
 }
+// cierra la tabla fuera del bucle
 echo "</table>";
 echo "<br/><a href='login.php'>Volver a Login</a>";
 ?>

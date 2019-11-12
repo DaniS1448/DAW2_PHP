@@ -1,15 +1,18 @@
 <?php
 
 session_start();
-
+// si recordar no esta creado, lo crea con valor false
 if (! isset($_SESSION['_recordar'])) {
     $_SESSION['_recordar'] = false;
 }
 
 $recordar = "";
 $recordarNombre = "";
+// si recordar tiene valor true es que se ha logueado anteriormente
 if ($_SESSION['_recordar'] == true) {
+    // entonces inyectará un checked en el html para recordar al usuario
     $recordar = "checked=\'checked\'";
+    // y tambien el nombre del usuario activo
     $recordarNombre = "value=\"".$_SESSION['_activo']."\"";
 }
 

@@ -1,10 +1,6 @@
 <?php 
 $n1 =$_POST['n1'];
-
 setcookie('n1', $n1);
-
-
-
 ?>
 <h1>Introduce otro número</h1>
 <form action="resultado.php" method="post">

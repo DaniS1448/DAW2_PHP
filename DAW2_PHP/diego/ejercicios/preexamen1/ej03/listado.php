@@ -20,16 +20,13 @@
 			}
 		}
 	}
-
 </script>
 </head>
 <body>
-
 	<input type="button" value="Peli favorita" onclick="peli();">
 	<input type="text" id="peli" readonly="readonly">
 	<br />
 	<input type="button" value="Canción favorita" onclick="cancion();">
 	<input type="text" id="cancion" readonly="readonly">
 	<br />
-
 </body>

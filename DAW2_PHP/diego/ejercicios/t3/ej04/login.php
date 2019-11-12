@@ -9,8 +9,10 @@ $primeraVez = ($usuario==null && $bandera==null && $nVisitas==null);
 if ($primeraVez) {
     $mensaje = 'Primera vez';
 }
-else {
+else { // ademas
+    // me creas una cookie, con el nombre de usuario como clave, y en valor me sumas 1
     setcookie($usuario,($nVisitas+1).'#'.$bandera);
+    // al cerrar escribirá el nombre del usuario logueado
     $mensaje = "Adiós $usuario";
 }
 echo <<<FORM

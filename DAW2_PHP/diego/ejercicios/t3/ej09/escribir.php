@@ -1,7 +1,8 @@
 <?php
 session_start();
-
+// recogemos el valor del usuario activo gracias a la sesion
 $usuario=$_SESSION['_activo'];
+// recogemos el valor del destinatario con el metodo get empleado en el paso anterior
 $destinatario=$_GET['destinatario'];
 
 //usamos el usuario y destinatario para despues recogerlos en escribirPOST
