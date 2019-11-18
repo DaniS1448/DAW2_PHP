@@ -15,8 +15,4 @@ if ($_POST['es'] != '' && $_POST['en'] != '' && $_POST['fr'] != '') {
     echo "Ningún campo puede estar vacío<br>";
     echo "<a href=\"add.php\"><button>Volver</button></a>";
 }
-
-
-
-
 ?>
