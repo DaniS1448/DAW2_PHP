@@ -1,0 +1,181 @@
+body {
+	//padding: 0 2em;
+	font-family: Montserrat, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	color: #444;
+	background: #eee;
+}
+
+.noexiste h1 {
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #34495E;
+}
+
+.juego {
+	//padding: 1em;
+	//margin: 1em;
+}
+
+.cajas {
+	margin-left: 20px;
+	margin-right: 20px;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.divTitulo {
+	margin-top: 15px;
+	background-color: #46637f;
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-width: 200px;
+	font-size: 25px;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.divTitulo span {
+	color: #ffab23;
+}
+
+.nuveasReglas{
+	margin-top: 15px;
+	padding: 10px 20px;
+	color: #34495E;
+	background-color: #ffab23;
+	border-radius: 10px;
+	//text-transform: uppercase;
+	font-weight: bold;
+}
+
+.pagina {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.centrado {
+	text-align: center;
+}
+
+.estadisticas {
+	box-shadow: 0px 1px 0px 0px #6f91b3;
+	background-color: transparent;
+	border-radius: 6px;
+	border: 1px solid #34495E;
+	display: inline-block;
+	//cursor: pointer;
+	color: #333333;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffee66;
+}
+
+.estadisticas .victorias, .estadisticas .vidas{
+	color: #ffab23;
+}
+
+.resultado0 {
+	margin-top: 15px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 35px;
+	padding: 30px 5px;
+	color: #fff;
+	background-color: #696969;
+	text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px
+		0, #aaa 0 5px 0, rgba(0, 0, 0, .1) 0 6px 1px, rgba(0, 0, 0, .1) 0 0
+		5px, rgba(0, 0, 0, .3) 0 1px 3px, rgba(0, 0, 0, .15) 0 3px 5px,
+		rgba(0, 0, 0, .2) 0 5px 10px, rgba(0, 0, 0, .2) 0 10px 10px,
+		rgba(0, 0, 0, .1) 0 20px 20px;
+}
+
+.resultado {
+	margin-top: 15px;
+	margin-bottom: 30px;
+	min-height: 100px;
+	border-radius: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 85px;
+	color: #FFFFFF;
+	background: #34495E;
+}
+
+.resultadoSinVidas {
+	margin-top: 15px;
+	transform: translateX(-15px);
+	padding: 0px 20px;
+	min-height: 160px;
+	border-radius: 10px;
+	width: 100%;
+	text-align: center;
+	font-size: 70px;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 145px;
+	color: #FFFFFF;
+	background: #34495E;
+}
+
+.VictoriaNaranja {
+	text-shadow: -5px 5px 0px #ffec64, -10px 10px 0px #ffc973, -15px 15px
+		0px #ffab23;
+}
+
+.Victoria {
+	text-shadow: -5px 5px 0px #00e6e6, -10px 10px 0px #01cccc, -15px 15px
+		0px #00bdbd;
+}
+
+.Perdida {
+	text-shadow: -5px 5px 0px #ff738d, -10px 10px 0px #fc3d50, -15px 15px
+		0px #ff1f35;
+}
+
+.jugada{
+	margin-top: 30px;
+	padding: 5px 0px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #FFFFFF;
+	background: #ffc423;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+.jugador{
+	background: #00bdbd;
+	background: #ffc423;
+}
+
+.banca{
+	background: #fc3d50;
+	margin-top: 15px;
+}
+
+.carta{
+	width: 90px;
+	height: 135px;
+}
+
+.carta{
+	width: 100px;
+	height: 150px;
+}
+
