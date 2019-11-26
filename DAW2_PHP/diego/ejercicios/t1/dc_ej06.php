@@ -13,12 +13,12 @@ while ($nombre !== "fin") {
 
     echo "Edad de $nombre?: ";
     fscanf(STDIN, "%d\n", $edad);
-    $personas["$nombre"] = $edad;
+    $aficiones["$nombre"] = $edad;
     echo "Nombre?: ";
     fscanf(STDIN, "%s\n", $nombre);
 }
 
-foreach ($personas as $e => $a) {
+foreach ($aficiones as $e => $a) {
 
     echo "$e ($a), ";
 }
