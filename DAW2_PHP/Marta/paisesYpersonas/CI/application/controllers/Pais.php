@@ -35,6 +35,7 @@ class Pais extends CI_Controller{
         $this->load -> view('pais/c');
         
         $pais=isset($_POST['nombre'])?$_POST['nombre']:null;
+        //$pais2 = $this->input->post('nombre');
         
         if ($pais!=null) {
             $this->load->model('pais_model');
