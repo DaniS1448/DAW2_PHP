@@ -1,8 +1,8 @@
 <?php
 /* 6. Pedir por teclado nombres de personas y sus edades, hasta que se introduzca el
-nombre “fin”. Mostrar a continuación el nombre de cada persona introducida y su edad
-(entre paréntesis). NOTA: Utilizar arrays asociativos. ¿Qué ocurre si dos personas se
-llaman igual? ¿Cómo podríamos ver la información anterior ordenada por nombre? ¿Y
+nombre ï¿½finï¿½. Mostrar a continuaciï¿½n el nombre de cada persona introducida y su edad
+(entre parï¿½ntesis). NOTA: Utilizar arrays asociativos. ï¿½Quï¿½ ocurre si dos personas se
+llaman igual? ï¿½Cï¿½mo podrï¿½amos ver la informaciï¿½n anterior ordenada por nombre? ï¿½Y
 por edad descendente? */
 echo 'Nombre? ';
 fscanf ( STDIN, "%s\n", $nombre );
@@ -10,13 +10,13 @@ fscanf ( STDIN, "%s\n", $nombre );
 while ( $nombre != 'fin' ) {
     echo "Edad de $nombre? ";
     fscanf ( STDIN, "%d\n", $edad );
-    $persona [$nombre] = $edad;
+    $aficion [$nombre] = $edad;
     echo 'Nombre? ';
     fscanf ( STDIN, "%s\n", $nombre );
 }
 
 
-foreach ( $persona as $nombre => $edad ) {
+foreach ( $aficion as $nombre => $edad ) {
     echo "$nombre($edad),";
 }
 
