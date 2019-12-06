@@ -16,7 +16,7 @@ $personas = R::findAll('persona');
 	<tr>
 		<th>Nombre</th>
 		<th>Nace</th>	
-		<th>Recide</th>
+		<th>Reside</th>
 		<th>Acción</th>
 	</tr>
 	
