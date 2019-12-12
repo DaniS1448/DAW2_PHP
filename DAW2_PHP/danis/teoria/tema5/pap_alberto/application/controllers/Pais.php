@@ -5,7 +5,8 @@ class Pais extends CI_Controller
 
     public function c()
     {
-        $this->load->view('pais/c');
+        frame($this,'pais/c');
+        //$this->load->view('pais/c');
     }
 
     public function cPost()
@@ -28,7 +29,8 @@ class Pais extends CI_Controller
     {
         $this->load->model('pais_model');
         $datos['paises'] = $this->pais_model->getPaises();
-        $this->load->view('pais/r', $datos);
+        frame($this,'pais/r',$datos);
+        //$this->load->view('pais/r', $datos);
     }
 }
 ?>

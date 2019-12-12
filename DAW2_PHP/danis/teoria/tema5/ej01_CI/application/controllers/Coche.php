@@ -17,6 +17,7 @@ class Coche extends CI_Controller{
     public function portatiles($marca){
         $portatiles=['Lenovo'=>['M1', 'M2']];
         $this->load->view('portatiles/modelos', $portatiles);
+        echo "Marca es: $marca";
     }
 }
 ?>
