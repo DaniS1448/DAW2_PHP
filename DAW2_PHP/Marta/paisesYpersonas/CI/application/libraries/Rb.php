@@ -9,6 +9,7 @@ class Rb {
         $db   = $db[$active_group]['database'];
         R::setup("mysql:host=$host;dbname=$db", $user, $pass);
         R::setAutoResolve ( true );
+        
     }
 }
 ?>

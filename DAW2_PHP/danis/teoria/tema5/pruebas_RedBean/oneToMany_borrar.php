@@ -2,19 +2,14 @@
 require_once 'rb.php';
 R::setup('mysql:host=localhost;dbname=pruebas_redbean', 'root', '');
 
-$colegio = R::dispense('colegio');
-$colegio -> nombre = 'Rey Fernando VI';
+//Borrar todas las asociaciones ya existentes
+$colegio = R::load('colegio',1);
+$colegio -> ownAlumnoList = [];
+R::store($colegio);
 
-$pepe = R::dispense('alumno');
-$pepe -> nombre = 'Pepe';
-$pepe -> colegio = $colegio;
-
-R::store( $pepe );
-
-$juan = R::dispense('alumno');
-$juan -> nombre = 'Juan';
-$juan -> colegio = $colegio;
-
-R::store( $juan );
+//Borrar sólo una de las asociaciones ya existentes (suponiendo que el alumno de id=2 esté en el colegio de id=1)
+$colegio = R::load('colegio',1);
+unset( $colegio -> ownAlumnoList [2] );
+R::store($colegio);
 
 ?>

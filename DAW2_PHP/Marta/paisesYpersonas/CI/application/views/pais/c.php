@@ -1,5 +1,5 @@
 <h2>Crear pais</h2>
-<form action="cpost2" method="post">
+<form action="<?=url_base()?>pais/cpost2" method="post">
 Nombre <input type="text" name="nombre"/>
 <input type="submit" value="Crear"/>
 </form>

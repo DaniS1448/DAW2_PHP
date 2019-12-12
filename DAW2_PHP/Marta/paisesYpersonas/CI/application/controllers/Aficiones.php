@@ -12,4 +12,18 @@ class Aficiones extends CI_Controller{
         $this->load->view('aficiones/r', $miArrayAficiones);
     }
     
+    
+    public function c(){
+        $this->load->view('aficiones/c');
+        
+        $af=isset($_POST['nombre'])?$_POST['nombre']:null;
+        
+        
+        if($af!=null){
+            
+        $this->load->model('aficiones_model');
+        $aficion=$this->aficiones_model->crearAficiones($af);
+        
+        }
+    }
 }
