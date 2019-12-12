@@ -1,24 +1,31 @@
 <?php
 class User_model extends CI_Model{
     
-    public function crearUser($nombre, $idCiudad){
+    public function crearUser($dni, $nombre, $idCiudad){
         
-        $city = R::load('city', $idCiudad);
+        $elDni = R::findOne('user','dni=?',[$dni]);
+        $noNulo = ($nombre != null );
+        $dniNoDuplicado = ($elDni == null);
         
-        if($nombre != null ){
+        if($noNulo && $dniNoDuplicado){
+            $city = R::load('city', $idCiudad);
             $user = R::dispense('user');
+            $user->dni=$dni;
             $user->nombre=$nombre;
-            //$user->city=$city;
+            $user->born=$city;
             R::store($user);
-            
+            /*
             $born = R::dispense('born');
             $born -> user = $user;
             $born -> city = $city;
             
             R::store($born);
-            
-        } else {
+            */
+        }
+        if(!$noNulo){
             throw new Exception('Campo vacío');
+        } else if (!$dniNoDuplicado){
+            throw new Exception('DNI Duplicado');
         }
         
     }

@@ -1,5 +1,6 @@
 <h2>CREAR USER </h2>
 <form action="<?= base_url()?>user/cpost" method="post">
+	DNI: <input type="text" name="dni"/><br>
 	Nombre: <input type="text" name="nombre"/><br>
 	Born: 
 	<select name="idCity">

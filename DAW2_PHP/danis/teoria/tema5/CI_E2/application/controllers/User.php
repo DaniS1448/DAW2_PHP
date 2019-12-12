@@ -12,13 +12,14 @@ class User extends CI_Controller{
     }
     
     public function cpost(){
+        $dni = isset($_POST['dni'])?$_POST['dni']:null;
         $nombre = isset($_POST['nombre'])?$_POST['nombre']:null;
         $idCity = isset($_POST['idCity'])?$_POST['idCity']:null;
         
         $this->load->model('user_model');
         
         try {
-            $this->user_model->crearUser($nombre, $idCity);
+            $this->user_model->crearUser($dni, $nombre, $idCity);
             redirect(base_url() . "user/userCreado?nombre=$nombre");
         } catch (Exception $e) {
             session_start();
