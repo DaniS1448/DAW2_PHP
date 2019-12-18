@@ -1,0 +1,1 @@
+<h2>Travel registered</h2>

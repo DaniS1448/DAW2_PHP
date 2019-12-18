@@ -1,0 +1,1 @@
+<h2>Country <?= $name ?> could not be created</h2>
