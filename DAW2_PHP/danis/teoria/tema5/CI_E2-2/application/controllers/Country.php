@@ -1,7 +1,7 @@
 <?php
 class Country extends CI_Controller{
     public function index(){
-        frame($this, 'country/index');
+        $this->r();
     }
     
     public function c(){
@@ -9,14 +9,29 @@ class Country extends CI_Controller{
     }
     
     public function cpost(){
-        $nombre = isset($_POST['nombre'])?$_POST['nombre']:null;
+        $name = isset($_POST['name'])?$_POST['name']:null;
         $this->load->model('country_model');
-        $this->country_model->createCountry($nombre);
-        redirect(base_url().'country/error?n='.$nombre);
+        
+        try {
+            $this->country_model->createCountry($name);
+            session_start_seguro();
+            $_SESSION['_msg']['texto']='Country created!';
+            $_SESSION['_msg']['uri']='country/r';
+            redirect(base_url().'msg');
+            
+        } catch (Exception $e) {
+            session_start_seguro();
+            $_SESSION['_msg']['texto']=$e->getMessage();
+            $_SESSION['_msg']['uri']='country/r';
+            redirect(base_url().'msg');
+        }
+
     }
     
-    public function error(){
-        echo "BIEN O MAL" . $_GET['n'];
+    public function r(){
+        $this->load->model('country_model');
+        $data['countries']=$this->country_model->getCountries();
+        frame($this, 'country/r', $data);
     }
     
 }
