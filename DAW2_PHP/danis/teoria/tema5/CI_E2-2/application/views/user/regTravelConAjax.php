@@ -1,17 +1,34 @@
 <script type="text/javascript">
-	var users=[];
-	var cities=[];
 
-    function userSelected(){
-    	var valueMiOption = document.getElementById('idUser').value;
-
-    	for(cadaId of cities){
+    function repintarChecboxes(allCities, checkedCities){
+    
+    	for(cadaId of allCities){
     		document.getElementById('idt-'+cadaId).checked=false;
         }
-
-    	for(cadaId of users[valueMiOption]){
-			document.getElementById('idt-'+cadaId).checked=true;
+    
+    	for(cadaId of checkedCities){
+    		document.getElementById('idt-'+cadaId).checked=true;
         }
+    }
+
+    function userSelected(){
+    	var x = new XMLHttpRequest();
+    	var idUser = document.getElementById('idUser').value;
+    	x.open("POST",
+    			"<?= base_url()?>user/ajaxTravelled",
+    			true);
+    	x.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    	x.setRequestHeader("X-Requested-With","XMLHttpRequest");
+    	x.send("idUser="+idUser);
+    	
+    	x.onreadystatechange=function(){
+    		if(x.readyState == 4 && x.status==200){
+    			var elementos = x.responseText.split('&');
+				var allCities = elementos[0].split('-');
+				var checkedCities = elementos[1].split('-');
+    			repintarChecboxes(allCities, checkedCities);
+    		}
+    	}
     }
 
 </script>
@@ -23,13 +40,6 @@
 		<select name="idUser" id="idUser" onchange="userSelected();">
 			<?php foreach ($users as $user):?>
 				<option value="<?= $user->id?>"><?= $user->dni?> - <?= $user->name?></option>
-				<script>
-					users[<?= $user->id ?>]=[];
-
-					<?php foreach ($user->aggr ('ownTravelledList', 'city') as $cadaCityTravelled):?>
-					users[<?= $user->id ?>].push(<?= $cadaCityTravelled->id ?>);
-					<?php endforeach;?>
-				</script>
 			<?php endforeach;?>
 		</select>
 		<br>
@@ -37,7 +47,6 @@
 		<?php foreach ($cities as $city):?>
     		<input type="checkbox" name="travelled[]" id="idt-<?= $city->id ?>" value="<?= $city->id ?>"/>
     		<label for="idt-<?= $city->id ?>"><?= $city->name ?></label>
-    		<script>cities.push(<?= $city->id ?>);</script>
 		<?php endforeach;?>
 		<br><br>
 		<input class="btn btn-warning" type="submit" value="Create">

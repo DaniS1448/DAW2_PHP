@@ -48,7 +48,17 @@ class User extends CI_Controller{
         $data['users']=$this->user_model->getUsers();
         $data['cities']=$this->city_model->getCities();
         
-        frame($this, 'user/regTravel', $data);
+        frame($this, 'user/regTravelConAjax', $data);
+    }
+    
+    public function ajaxTravelled(){
+        $this->load->model('user_model');
+        $this->load->model('city_model');
+        
+        $data['users']=$this->user_model->getUsers();
+        $data['cities']=$this->city_model->getCities();
+        
+        $this->load->view('user/ajaxTravelled', $data);
     }
     
     public function regTravelPost(){
