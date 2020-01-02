@@ -10,6 +10,12 @@ class Country_model extends CI_Model{
             $country->name=$nombre;
             R::store($country);
         }
+        else if($nombreDuplicado){
+            throw new Exception('Mistake, the country exists');
+        }
+        else if($nombre==null){
+            throw new Exception('Mistake, the field can´t be empty');
+        }
     }
     
     public function r(){
