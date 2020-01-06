@@ -12,6 +12,9 @@ class User_model extends CI_Model{
             $city=R::load('city', $idCityBorn);
             $user->born=$city;
             R::store($user);
+            session_start_seguro();
+            $_SESSION['_msg']['texto']='User create ok';
+            redirect(base_url().'mensajes');
         }
     }
     

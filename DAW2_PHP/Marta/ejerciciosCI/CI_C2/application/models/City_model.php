@@ -8,6 +8,10 @@ class City_model extends CI_Model{
         $city->country=$country;
         
         R::store($city);
+        
+        session_start_seguro();
+        $_SESSION['_msg']['texto']='City  create ok';
+        redirect(base_url().'mensajes');
     }
     
     public function r(){
