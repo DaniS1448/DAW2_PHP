@@ -13,9 +13,11 @@
     				<td><?=$empleado->telefono?></td>
     				<td><?=$empleado->ciudad->nombre?></td>
     				<td>
+    					<?php $sinComaFinal='';?>
     					<?php foreach($empleado->ownSabeList as $sabe):?>
-    					<?=$sabe->lenguaje->nombre?>,
+    					<?php $sinComaFinal.=$sabe->lenguaje->nombre.','?>
     					<?php endforeach;?>
+    					<?= rtrim($sinComaFinal, ','); ?>
     					
     					<!--<?php foreach($empleado->aggr('ownSabeList','lenguaje') as $lenguaje):?>
     					<?=$lenguaje->nombre?>,
