@@ -6,9 +6,9 @@
  * @param string $datos
  */
 function frame($c,$path_to_view,$datos=[]) {
-    $c->load->view('_templates/head',$datos);
-    $c->load->view('_templates/nav',$datos);
-    $c->load->view($path_to_view,$datos);
-    $c->load->view('_templates/end',$datos);
+    $controller->load->view('_templates/head',$datos);
+    $controller->load->view('_templates/nav',$datos);
+    $controller->load->view($view,$datos);
+    $controller->load->view('_templates/end',$datos);
 }
 ?>
